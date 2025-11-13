@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const uint8arr = new Uint8Array(
+        "raquib reyaz".split("").map((element) => element.charCodeAt(0))
+      );
+
+      console.log("data to be sent", uint8arr);
+
+      fetch("http://localhost:3000", { method: "POST", body: uint8arr })
+        .then((res) => res.text())
+        .then((data) => console.log(data));
+    </script>
+  </body>
+</html>
