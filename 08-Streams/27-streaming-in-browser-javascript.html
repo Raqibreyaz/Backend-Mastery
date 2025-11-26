@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <label for="file-input">Input File</label>
+    <input type="file" id="file-input" /> -->
+    <!-- <script>
+      const input = document.querySelector("#file-input");
+      const decoder = new TextDecoder();
+
+      input.addEventListener("change", async (event) => {
+
+        // browser doesnt provide fixed size buffers thats why we get 
+        // varying length array buffers
+        const file = input.files[0];
+        // console.log(await file.text());
+
+        const readStream = file.stream();
+
+        for await (const chunk of readStream) {
+          console.log(chunk);
+        }
+
+        // const reader = readStream.getReader();
+
+        // while (true) {
+        //   const { done, value } = await reader.read();
+        //   if (done) break;
+        //   console.log(value);
+        // }
+      });
+    </script> -->
+
+    <script type="module" src="./27-script.js"></script>
+  </body>
+</html>
