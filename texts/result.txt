@@ -1,1 +1,489 @@
-🤣0123
+POST / HTTP/1.1
+Host: 127.0.0.1:4000
+Connection: keep-alive
+Content-Length: 11517
+Cache-Control: max-age=0
+sec-ch-ua: "Google Chrome";v="143", "Chromium";v="143", "Not A(Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+DNT: 1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+Origin: http://127.0.0.1:3000
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryr7CiRxWDGIrtgSEK
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://127.0.0.1:3000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,hi;q=0.8,ur;q=0.7
+Cookie: _ga=GA1.1.1134797386.1756371815; _ga_7D7Y8D5Q4W=GS2.1.s1757933285$o2$g1$t1757933363$j60$l0$h0
+
+------WebKitFormBoundaryr7CiRxWDGIrtgSEK
+Content-Disposition: form-data; name="file"; filename="image_uploader.html"
+Content-Type: text/html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image & Prompt Uploader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-input-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 60px;
+        }
+
+        .file-input-label:hover {
+            background: #e9ecef;
+            border-color: #764ba2;
+        }
+
+        .file-input-label.has-file {
+            border-style: solid;
+            background: #e7f3ff;
+        }
+
+        .file-name {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 120px;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .preview-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .preview-box {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+        }
+
+        .preview-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .preview-box.empty {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 10px;
+        }
+
+        button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .status-message {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+
+        .status-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status-message.loading {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Image & Prompt Uploader</h1>
+
+        <form id="uploadForm">
+            <div class="form-group">
+                <label for="image1">Image 1 *</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="image1" name="image1" accept="image/*" required>
+                    <label for="image1" class="file-input-label" id="label1">
+                        <span>📁 Click to select first image</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="image2">Image 2 *</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="image2" name="image2" accept="image/*" required>
+                    <label for="image2" class="file-input-label" id="label2">
+                        <span>📁 Click to select second image</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="preview-container">
+                <div class="preview-box empty" id="preview1">Preview 1</div>
+                <div class="preview-box empty" id="preview2">Preview 2</div>
+            </div>
+
+            <div class="form-group">
+                <label for="prompt">Prompt *</label>
+                <textarea 
+                    id="prompt" 
+                    name="prompt" 
+                    placeholder="Enter your prompt here..." 
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+
+        <div class="status-message" id="statusMessage"></div>
+    </div>
+
+    <script>
+        const image1Input = document.getElementById('image1');
+        const image2Input = document.getElementById('image2');
+        const label1 = document.getElementById('label1');
+        const label2 = document.getElementById('label2');
+        const preview1 = document.getElementById('preview1');
+        const preview2 = document.getElementById('preview2');
+        const form = document.getElementById('uploadForm');
+        const statusMessage = document.getElementById('statusMessage');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // Handle file input changes
+        function handleFileSelect(input, label, preview) {
+            input.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    label.classList.add('has-file');
+                    label.innerHTML = `<span class="file-name">✓ ${file.name}</span>`;
+
+                    // Show preview
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.classList.remove('empty');
+                        preview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    label.classList.remove('has-file');
+                    label.innerHTML = '<span>📁 Click to select image</span>';
+                    preview.classList.add('empty');
+                    preview.innerHTML = preview.id === 'preview1' ? 'Preview 1' : 'Preview 2';
+                }
+            });
+        }
+
+        handleFileSelect(image1Input, label1, preview1);
+        handleFileSelect(image2Input, label2, preview2);
+
+        // Handle form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const image1 = image1Input.files[0];
+            const image2 = image2Input.files[0];
+            const prompt = document.getElementById('prompt').value;
+
+            // Validate inputs
+            if (!image1 || !image2) {
+                showStatus('Please select both images', 'error');
+                return;
+            }
+
+            if (!prompt.trim()) {
+                showStatus('Please enter a prompt', 'error');
+                return;
+            }
+
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('image1', image1);
+            formData.append('image2', image2);
+            formData.append('prompt', prompt);
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            showStatus('Uploading...', 'loading');
+
+            try {
+                // Replace with your actual API endpoint
+                const API_ENDPOINT = 'https://your-api-endpoint.com/upload';
+
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    body: formData,
+                    // Add headers if needed (e.g., authentication)
+                    // headers: {
+                    //     'Authorization': 'Bearer YOUR_TOKEN'
+                    // }
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    showStatus('Successfully uploaded! ✓', 'success');
+                    console.log('Response:', result);
+
+                    // Reset form after 2 seconds
+                    setTimeout(() => {
+                        form.reset();
+                        label1.classList.remove('has-file');
+                        label2.classList.remove('has-file');
+                        label1.innerHTML = '<span>📁 Click to select first image</span>';
+                        label2.innerHTML = '<span>📁 Click to select second image</span>';
+                        preview1.classList.add('empty');
+                        preview2.classList.add('empty');
+                        preview1.innerHTML = 'Preview 1';
+                        preview2.innerHTML = 'Preview 2';
+                        statusMessage.style.display = 'none';
+                    }, 2000);
+                } else {
+                    const errorText = await response.text();
+                    showStatus(`Upload failed: ${response.status} ${response.statusText}`, 'error');
+                    console.error('Error:', errorText);
+                }
+            } catch (error) {
+                showStatus(`Network error: ${error.message}`, 'error');
+                console.error('Error:', error);
+            } finally {
+                submitBtn.disabled = false;
+            }
+        });
+
+        function showStatus(message, type) {
+            statusMessage.textContent = message;
+            statusMessage.className = `status-message ${type}`;
+            statusMessage.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+------WebKitFormBoundaryr7CiRxWDGIrtgSEK--c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+[31mFailed running '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
+c[32mRestarting '10-Networking-with-Core-Nodejs-Modules/15-uploading-file-from-client-to-server/server.js'[39m
+Server is running on port 4000
