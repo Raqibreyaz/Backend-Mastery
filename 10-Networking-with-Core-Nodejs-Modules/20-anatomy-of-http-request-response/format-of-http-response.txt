@@ -1,0 +1,6 @@
+<HTTP Version> <Status Code> <Reason Phrase>
+<Header-Name-1>: <Header-Value-1>
+<Header-Name-2>: <Header-Value-2>
+...
+
+<Optional-Body>

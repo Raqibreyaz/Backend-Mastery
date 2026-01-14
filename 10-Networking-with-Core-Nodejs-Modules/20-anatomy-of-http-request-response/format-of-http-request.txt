@@ -1,0 +1,6 @@
+<Method> <Path> <HTTP Version>
+<Header-Name-1>: <Header-Value-1>
+<Header-Name-2>: <Header-Value-2>
+...
+
+<Optional-Body>

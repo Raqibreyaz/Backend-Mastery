@@ -1,0 +1,5 @@
+GET /index.html HTTP/1.1 => Request Line
+Host: www.example.com
+User-Agent: Mozilla/5.0
+Accept-Language: en-US
+

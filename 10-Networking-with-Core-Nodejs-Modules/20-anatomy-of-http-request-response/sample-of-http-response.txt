@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 1354
+
+<html>
+  <head><title>Example</title></head>
+  <body>Hello, world!</body>
+</html>
