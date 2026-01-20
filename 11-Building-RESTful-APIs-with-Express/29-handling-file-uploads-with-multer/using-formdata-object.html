@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Progress: <span class="progress">0</span>%</p>
+    <form class="form" enctype="multipart/form-data">
+      <input type="file" name="profilePic" /> <br />
+      <button>Submit</button>
+    </form>
+    <script>
+      const form = document.querySelector(".form");
+      const p = document.querySelector(".progress");
+      const SERVER_URL = "http://localhost:4000/upload";
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.log("form submit triggered");
+        const formData = new FormData(form);
+        formData.append("parentDirId", "cddhdskchnkposscsc");
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", SERVER_URL, true);
+        xhr.responseType = "json";
+        xhr.addEventListener("load", () => console.log(xhr.response));
+
+        xhr.upload.addEventListener("progress", (e) => {
+          const totalProgress = (e.loaded / e.total) * 100;
+          p.innerText = totalProgress.toFixed(2);
+        });
+
+        xhr.send(formData);
+      });
+    </script>
+  </body>
+</html>
