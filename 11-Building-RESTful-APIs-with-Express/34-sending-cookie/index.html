@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // client should accept and send cookies
+      //   fetch("http://localhost:4000", { credentials: "include" })
+      //     .then((res) => res.json())
+      //     .then(console.log);
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://localhost:4000");
+      xhr.withCredentials = true;
+      xhr.responseType = "json";
+
+      xhr.addEventListener("load", (_) => {
+        console.log(xhr.response);
+      });
+
+      xhr.send();
+    </script>
+  </body>
+</html>
