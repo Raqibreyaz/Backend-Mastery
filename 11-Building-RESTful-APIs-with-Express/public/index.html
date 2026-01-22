@@ -1,0 +1,32 @@
+<!-- {
+  user: { firstName: 'Raquib', lastName: 'Reyaz' },
+  nums: [ '1', '2', '3' ],
+  email: 'raquib@raquib.com'
+} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="script.js" type="module"></script> -->
+</head>
+<body>
+    <h1>User Form</h1>
+    <form action="/user" method="post" enctype="application/x-www-form-urlencoded">
+        
+        <!-- sending object having keys firstName,lastName -->
+        <input type="text" name="user[firstName]" value="Raquib"><br>
+        <input type="text" name="user[lastName]" value="Reyaz"><br>
+
+        <!-- sending array containing numbers [1,2,3] -->
+        <input type="text" name="nums[]" value="1"><br>
+        <input type="text" name="nums[]" value="2"><br>
+        <input type="text" name="nums[]" value="3"><br>
+
+        <input type="email" name="email" value="raquib@raquib.com"><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
