@@ -1,0 +1,1 @@
+A Database Management System (DBMS) consists of a database server, which stores and manages data, and database clients, which interact with the server to perform operations. In most applications, developers use database drivers or libraries within their code as the client to retrieve or manipulate data.

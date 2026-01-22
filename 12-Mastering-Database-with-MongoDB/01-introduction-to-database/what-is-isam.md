@@ -1,0 +1,1 @@
+ISAM (Indexed Sequential Access Method) is a file organization method used for managing and accessing data in a sequential and indexed manner. It was developed by IBM in the 1960s as a way to efficiently store and retrieve data in large datasets.
