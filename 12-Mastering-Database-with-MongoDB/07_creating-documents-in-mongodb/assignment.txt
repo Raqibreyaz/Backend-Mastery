@@ -1,0 +1,117 @@
+[
+  {
+    "title": "Groceries at Walmart",
+    "amount": 85.50,
+    "category": "Food & Dining",
+    "date": "2024-01-15",
+    "paymentMethod": "Credit Card",
+    "description": "Weekly grocery shopping",
+    "tags": ["groceries", "essential"]
+  },
+  {
+    "title": "Netflix Subscription",
+    "amount": 15.99,
+    "category": "Entertainment",
+    "date": "2024-01-10",
+    "paymentMethod": "Debit Card",
+    "description": "Monthly subscription",
+    "tags": ["subscription", "streaming"]
+  },
+  {
+    "title": "Gas Station",
+    "amount": 45.00,
+    "category": "Transportation",
+    "date": "2024-01-12",
+    "paymentMethod": "Credit Card",
+    "description": "Full tank of gas",
+    "tags": ["fuel", "car"]
+  },
+  {
+    "title": "Dinner at Italian Restaurant",
+    "amount": 65.80,
+    "category": "Food & Dining",
+    "date": "2024-01-14",
+    "paymentMethod": "Credit Card",
+    "description": "Date night dinner",
+    "tags": ["restaurant", "dining out"]
+  },
+  {
+    "title": "Electricity Bill",
+    "amount": 120.75,
+    "category": "Utilities",
+    "date": "2024-01-05",
+    "paymentMethod": "Bank Transfer",
+    "description": "Monthly electricity bill",
+    "tags": ["bill", "utilities"]
+  },
+  {
+    "title": "Amazon Purchase - Books",
+    "amount": 32.45,
+    "category": "Shopping",
+    "date": "2024-01-08",
+    "paymentMethod": "Credit Card",
+    "description": "2 programming books",
+    "tags": ["books", "education"]
+  },
+  {
+    "title": "Gym Membership",
+    "amount": 29.99,
+    "category": "Health & Fitness",
+    "date": "2024-01-01",
+    "paymentMethod": "Debit Card",
+    "description": "Monthly gym fee",
+    "tags": ["fitness", "subscription"]
+  },
+  {
+    "title": "Coffee Shop",
+    "amount": 4.75,
+    "category": "Food & Dining",
+    "date": "2024-01-16",
+    "paymentMethod": "Cash",
+    "description": "Morning coffee",
+    "tags": ["coffee", "snack"]
+  },
+  {
+    "title": "Phone Bill",
+    "amount": 55.00,
+    "category": "Utilities",
+    "date": "2024-01-03",
+    "paymentMethod": "Credit Card",
+    "description": "Monthly mobile plan",
+    "tags": ["bill", "communication"]
+  },
+  {
+    "title": "Movie Tickets",
+    "amount": 28.00,
+    "category": "Entertainment",
+    "date": "2024-01-13",
+    "paymentMethod": "Debit Card",
+    "description": "2 tickets for new movie",
+    "tags": ["movies", "entertainment"]
+  }
+]
+
+Level 1: Basic Queries
+1.Find all expenses in the "Food & Dining" category
+2.Find expenses greater than $50
+3.Find expenses paid with "Credit Card"
+4.Find expenses that have the tag "groceries"
+
+Level 2: Comparison Operators
+5.Find expenses between $20 and $60 (inclusive)
+6.Find expenses that are NOT in the "Entertainment" category
+7.Find expenses less than $10 or greater than $100
+
+Level 3: Logical Operators
+8.Find expenses in "Food & Dining" category that cost more than $30
+9.Find expenses that are either "subscriptions" OR paid with "Cash"
+10.Find expenses from "Shopping" category that don't have "books" tag
+
+Level 4: Array Operations
+11.Find expenses that have exactly 2 tags
+12.Find expenses that have both "subscription" AND "streaming" tags
+
+Level 5: Advanced Queries
+13.Find the 3 most recent expenses
+14.Find expenses from January 2024, sorted by amount (highest first)
+15.Find unique categories in the collection

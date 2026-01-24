@@ -1,0 +1,28 @@
+Mongo Shell
+
+    It is a node REPL.
+    Since it is a node REPL, we can do all the operations of NodeJS.
+
+    mongo shell uses full node.exe but has modified it for handling database operations.
+
+    Difference between node REPL and mongoSh REPL
+
+    Node REPL:
+        1. Undefined is return if there is no return value.
+        2. Does not highlights the code.
+        3. In case of promise, it returns the full promise object.
+        4. We cannot redeclare, redefine a const variable.
+        5. await can de used in global space.
+        6. Npm can be accessed and used. 
+        7. Don't have extra commands for handling databases. 
+        8. process.exit() is used for exiting.
+
+    MongoSH REPL:
+        1. Newline character (Empty line) is returned if there is no return value.
+        2. Highlights the code.
+        3. In case of promise, it returns resolve value of promise, Highlights the Error in case of rejection.
+        4. We can redeclare, redefine a const variable.
+        5. await cannot be used in global space. ( use async function )
+        6. NPM cannot be accessed.
+        7. Have extra commands for handling databases. 
+        8. exit command use to exit the shell

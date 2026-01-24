@@ -1,0 +1,402 @@
+[
+    {
+        "title": "Gym membership",
+        "amount": 183.73,
+        "currency": "EUR",
+        "date": "2024-08-18T05:00:45.203425",
+        "category": "Healthcare",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Electricity bill",
+        "amount": 151.99,
+        "currency": "CAD",
+        "date": "2024-08-15T04:23:53.203425",
+        "category": "Utilities",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Electricity bill",
+        "amount": 329.83,
+        "currency": "CAD",
+        "date": "2024-05-10T01:19:36.203425",
+        "category": "Utilities",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Groceries",
+        "amount": 297.82,
+        "currency": "CAD",
+        "date": "2025-01-18T00:23:35.203425",
+        "category": "Shopping",
+        "paymentMethod": "Net Banking"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 216.08,
+        "currency": "JPY",
+        "date": "2024-11-23T18:53:07.203425",
+        "category": "Travel",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Movie night",
+        "amount": 314.94,
+        "currency": "CAD",
+        "date": "2024-10-13T20:52:29.203425",
+        "category": "Entertainment",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Electricity bill",
+        "amount": 121.68,
+        "currency": "JPY",
+        "date": "2024-04-21T19:21:13.203425",
+        "category": "Utilities",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Doctor appointment",
+        "amount": 164.91,
+        "currency": "USD",
+        "date": "2024-12-25T22:58:32.203425",
+        "category": "Healthcare",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Books",
+        "amount": 423.95,
+        "currency": "AUD",
+        "date": "2024-08-26T02:29:39.203425",
+        "category": "Education",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Online course",
+        "amount": 424.85,
+        "currency": "USD",
+        "date": "2024-08-26T09:47:57.203425",
+        "category": "Education",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 463.73,
+        "currency": "USD",
+        "date": "2024-11-29T10:38:09.203425",
+        "category": "Travel",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Doctor appointment",
+        "amount": 208.74,
+        "currency": "INR",
+        "date": "2024-07-03T13:13:06.203425",
+        "category": "Healthcare",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Online course",
+        "amount": 242.08,
+        "currency": "AUD",
+        "date": "2024-07-30T08:27:05.203425",
+        "category": "Education",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Groceries",
+        "amount": 295.09,
+        "currency": "INR",
+        "date": "2024-07-02T08:59:21.203425",
+        "category": "Shopping",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Dinner with family",
+        "amount": 193.8,
+        "currency": "JPY",
+        "date": "2024-08-20T09:18:22.203425",
+        "category": "Food",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Dinner with family",
+        "amount": 179.7,
+        "currency": "INR",
+        "date": "2024-03-24T01:21:07.203425",
+        "category": "Food",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Online course",
+        "amount": 50.21,
+        "currency": "CAD",
+        "date": "2024-08-11T00:15:37.203425",
+        "category": "Education",
+        "paymentMethod": "Net Banking"
+    },
+    {
+        "title": "Electricity bill",
+        "amount": 198.56,
+        "currency": "CAD",
+        "date": "2024-04-03T12:45:10.203425",
+        "category": "Utilities",
+        "paymentMethod": "Net Banking"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 309.94,
+        "currency": "EUR",
+        "date": "2024-12-31T01:50:48.203425",
+        "category": "Travel",
+        "paymentMethod": "Net Banking"
+    },
+    {
+        "title": "Flight ticket",
+        "amount": 322.43,
+        "currency": "GBP",
+        "date": "2024-10-16T13:10:01.203425",
+        "category": "Travel",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 176.78,
+        "currency": "CAD",
+        "date": "2024-05-12T10:50:38.203425",
+        "category": "Travel",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 481.5,
+        "currency": "CAD",
+        "date": "2024-06-10T22:47:28.203425",
+        "category": "Travel",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Books",
+        "amount": 278.92,
+        "currency": "EUR",
+        "date": "2024-09-07T21:28:47.203425",
+        "category": "Education",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Online course",
+        "amount": 41.31,
+        "currency": "GBP",
+        "date": "2024-05-21T19:51:33.203425",
+        "category": "Education",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 494.56,
+        "currency": "GBP",
+        "date": "2024-08-05T14:49:31.203425",
+        "category": "Travel",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Dinner with family",
+        "amount": 12.49,
+        "currency": "USD",
+        "date": "2024-02-03T13:04:36.203425",
+        "category": "Food",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 354.71,
+        "currency": "INR",
+        "date": "2025-01-04T12:12:59.203425",
+        "category": "Travel",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Flight ticket",
+        "amount": 330.77,
+        "currency": "EUR",
+        "date": "2024-10-29T16:45:13.203425",
+        "category": "Travel",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Dinner with family",
+        "amount": 446.72,
+        "currency": "JPY",
+        "date": "2024-10-01T11:21:59.203425",
+        "category": "Food",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Online course",
+        "amount": 147.86,
+        "currency": "CAD",
+        "date": "2024-06-18T15:58:51.203425",
+        "category": "Education",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 24.95,
+        "currency": "INR",
+        "date": "2024-08-06T03:30:36.203425",
+        "category": "Travel",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Gym membership",
+        "amount": 273.53,
+        "currency": "EUR",
+        "date": "2024-11-15T20:10:07.203425",
+        "category": "Healthcare",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Groceries",
+        "amount": 163.75,
+        "currency": "GBP",
+        "date": "2024-10-19T07:23:45.203425",
+        "category": "Shopping",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Gym membership",
+        "amount": 361.5,
+        "currency": "EUR",
+        "date": "2024-05-10T03:48:46.203425",
+        "category": "Healthcare",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Dinner with family",
+        "amount": 265.57,
+        "currency": "USD",
+        "date": "2024-01-29T23:30:00.203425",
+        "category": "Food",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Groceries",
+        "amount": 103.51,
+        "currency": "INR",
+        "date": "2024-10-08T12:37:25.203425",
+        "category": "Shopping",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Dinner with family",
+        "amount": 238.8,
+        "currency": "CAD",
+        "date": "2024-12-12T10:40:12.203425",
+        "category": "Food",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Lunch with client",
+        "amount": 470.41,
+        "currency": "USD",
+        "date": "2025-01-01T23:42:13.203425",
+        "category": "Food",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Groceries",
+        "amount": 194.65,
+        "currency": "JPY",
+        "date": "2024-09-17T10:29:52.203425",
+        "category": "Shopping",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Groceries",
+        "amount": 84.65,
+        "currency": "JPY",
+        "date": "2024-12-05T04:35:11.203425",
+        "category": "Shopping",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Books",
+        "amount": 311.46,
+        "currency": "CAD",
+        "date": "2024-10-31T12:26:03.203425",
+        "category": "Education",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Online course",
+        "amount": 485.98,
+        "currency": "CAD",
+        "date": "2024-02-01T10:32:52.203425",
+        "category": "Education",
+        "paymentMethod": "Net Banking"
+    },
+    {
+        "title": "Electricity bill",
+        "amount": 139.43,
+        "currency": "GBP",
+        "date": "2024-05-10T07:12:13.203425",
+        "category": "Utilities",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 241.54,
+        "currency": "EUR",
+        "date": "2024-06-08T16:12:03.203425",
+        "category": "Travel",
+        "paymentMethod": "Debit Card"
+    },
+    {
+        "title": "Lunch with client",
+        "amount": 402.01,
+        "currency": "AUD",
+        "date": "2024-05-17T23:01:08.203425",
+        "category": "Food",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Electricity bill",
+        "amount": 323.91,
+        "currency": "INR",
+        "date": "2024-11-29T00:02:07.203425",
+        "category": "Utilities",
+        "paymentMethod": "Cash"
+    },
+    {
+        "title": "Online course",
+        "amount": 356.65,
+        "currency": "CAD",
+        "date": "2024-02-05T18:43:56.203425",
+        "category": "Education",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Electricity bill",
+        "amount": 348.26,
+        "currency": "INR",
+        "date": "2024-08-24T23:02:32.203425",
+        "category": "Utilities",
+        "paymentMethod": "Credit Card"
+    },
+    {
+        "title": "Taxi ride",
+        "amount": 299.96,
+        "currency": "JPY",
+        "date": "2024-09-28T17:09:45.203425",
+        "category": "Travel",
+        "paymentMethod": "UPI"
+    },
+    {
+        "title": "Gym membership",
+        "amount": 290.77,
+        "currency": "JPY",
+        "date": "2025-01-03T21:45:44.203425",
+        "category": "Healthcare",
+        "paymentMethod": "Credit Card"
+    }
+]

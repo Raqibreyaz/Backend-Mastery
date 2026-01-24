@@ -1,0 +1,7 @@
+Behinds the Scenes Mongo Data Packets
+
+    -> MongoDB Protocol is built on top of TCP.
+    -> It make a three way TCP handshake.
+    -> Send request-response in every 3-5 Secs for checking it connection is alive or not(heart-beat check).
+    -> For every DB call(Operation) a request is send to server.
+    -> DB calls in Shell is Synchronous

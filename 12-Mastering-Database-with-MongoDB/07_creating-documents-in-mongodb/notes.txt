@@ -1,0 +1,21 @@
+Read Operation in MongoDB
+
+    -> db represent to the current database used.
+    -> we can do db.<collectionName>.find()
+        It will show all the available documents in it.
+        It returns a cursor, it is like an array
+    
+    -> For finding specific documents we can pass an object in find()
+        db.<collectionName>.find({ user: "23" })
+
+    -> Just like find we also have findOne method,
+        Which returns only the first match (as Object not cursor).
+        db.<collectionName>.findOne({ user: "23" })
+
+    -> If we want to find document in more depth, use configuration object:
+        db.<collectionName>.findOne({ user: {$gt : 2} })
+
+        $gt -> greaterThan
+        $gte -> greaterThanEqualTo
+        $lt -> LessThan
+        $lte -> LessThanEqualTo
