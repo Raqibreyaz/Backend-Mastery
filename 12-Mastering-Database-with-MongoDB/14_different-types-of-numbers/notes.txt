@@ -1,0 +1,17 @@
+MongoDB Number Data Types
+
+    Int32 (Standard Number)
+
+        -> Used for regular integers.
+        -> Suitable for most everyday use cases.
+        -> Range is from -2,147,483,648 to 2,147,483,647.
+
+    Int64 – NumberLong()
+
+        -> Used for very large integers that exceed the Int32 range.
+        -> Required when numbers go beyond JavaScript's safe integer limit.
+
+    Decimal128 – NumberDecimal()
+
+        -> Used for high-precision decimal values.
+        -> Ideal for financial or scientific data where rounding errors must be avoided.

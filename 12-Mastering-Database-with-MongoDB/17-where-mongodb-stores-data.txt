@@ -1,0 +1,11 @@
+MongoDB Data Storage Summary
+
+    Default data folder on Windows: C:\data\db
+    (Data is stored here in binary format.)
+
+    Custom data path:
+        -> You can specify your own storage location when starting MongoDB with:
+            mongod --dbpath <your_custom_path>
+
+    Important:
+        -> The specified folder must exist before running the command.

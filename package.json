@@ -1,10 +1,13 @@
 {
   "type": "module",
   "dependencies": {
-    "@types/node": "^24.10.1",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "express": "^5.2.1",
+    "mongodb": "^7.0.0",
     "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.10"
   }
 }

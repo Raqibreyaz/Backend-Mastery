@@ -1,0 +1,36 @@
+Other Data Types
+
+String
+    -> Most commonly used data type.
+    -> Stores text values like "name": "Sahil".
+
+Boolean
+    -> Stores true or false.
+    -> Useful for flags or conditions like "isActive": true.
+
+Date
+    -> Stores date and time in ISODate format.
+    -> Example: ISODate("2025-05-26T00:00:00Z").
+
+Array
+    -> Stores a list of values.
+    -> Example: "tags": ["nodejs", "mongodb"].
+
+Object (Embedded Document)
+    -> Stores nested documents inside a field.
+    -> Example: "address": { "city": "Mumbai", "zip": 400001 }.
+
+null
+    -> Stores a null value, like "middleName": null.
+
+Regular Expression (regex)
+    -> Stores a regular expression pattern for matching strings.
+    -> Example: { name: { $regex: /^S/ } }.
+
+MinKey
+    -> A special value that is always less than any other value in MongoDB.
+    -> Used mainly for internal operations like range queries.
+
+MaxKey
+    -> Opposite of MinKey. Always greater than any other value.
+    -> Also used in range operations and comparisons.

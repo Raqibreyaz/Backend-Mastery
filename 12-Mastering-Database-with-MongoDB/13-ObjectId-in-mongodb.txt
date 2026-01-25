@@ -1,0 +1,6 @@
+ObjectId DataTye
+
+    -> ObjectId is 12 bytes = 24-character hex string.
+    -> Structure: 4-byte timestamp, 5-byte machine info, 3-byte counter.
+    -> Ensures global uniqueness.
+    -> You can override _id, but if not provided, MongoDB generates it automatically.

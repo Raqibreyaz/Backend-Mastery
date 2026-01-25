@@ -1,0 +1,8 @@
+summary: 
+- add your local ip address & ipv6 address to mongodb connection string
+- setup mongosh in termux or wherever you wish to access your mongodb
+- if ipv6 then add ipv6: true inside the config file
+
+make the changes and copy paste the connection string to mongosh command in your desired terminal 
+example: 
+mongosh mongodb:////xyz:27017/

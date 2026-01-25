@@ -1,0 +1,15 @@
+MongoDB Config File 
+
+    -> It’s a text file where you tell MongoDB how to run.
+
+    -> You can set things like:
+        -> Where to save your data (dbPath).
+        -> Where to save logs.
+        -> What network address and port to use.
+
+    Example to set data folder:
+        storage:
+        dbPath: C:\my_mongo_data
+
+    -> To start MongoDB using this file, run:
+        mongod --config path\to\mongod.config
