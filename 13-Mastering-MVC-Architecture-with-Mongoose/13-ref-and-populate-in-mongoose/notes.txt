@@ -1,0 +1,9 @@
+ref & populate in Mongoose
+
+ref: Used in schema to reference another model using ObjectId.
+    author: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+
+populate(): Replaces the referenced ObjectId with the actual document.
+    const post = await Post.find().populate("author");
+
+Used to create relationships (like foreign keys) between collections.

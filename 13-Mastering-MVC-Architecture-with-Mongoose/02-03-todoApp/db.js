@@ -1,18 +1,18 @@
-import { MongoClient } from "mongodb";
-
-export const client = new MongoClient(
-  "mongodb://admin:admin@localhost:27017/todoApps?authSource=admin"
-);
+import mongoose from "mongoose";
 
 export async function connectDB() {
-  await client.connect();
-  const db = client.db();
-  console.log("Database connected");
-  return db;
+  try {
+    await mongoose.connect(
+      "mongodb://admin:admin@localhost:27017/todoApp?authSource=admin",
+    );
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
 }
 
 process.on("SIGINT", async () => {
-  await client.close();
+  await mongoose.disconnect()
   console.log("Client Disconnected!");
   process.exit(0);
 });
