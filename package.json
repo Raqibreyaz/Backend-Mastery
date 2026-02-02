@@ -5,6 +5,7 @@
     "cors": "^2.8.5",
     "express": "^5.2.1",
     "mongodb": "^7.0.0",
+    "mongoose": "^9.1.5",
     "multer": "^2.0.2"
   },
   "devDependencies": {

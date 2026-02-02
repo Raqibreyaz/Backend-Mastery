@@ -1,0 +1,74 @@
+CRUD Operations Using Mongoose
+
+Setup First (Define Schema & Model)
+
+    const mongoose = require("mongoose");
+    const userSchema = new mongoose.Schema({
+        name: String,
+        email: String,
+        age: Number
+    });
+    const User = mongoose.model("User", userSchema);
+    module.exports = User;
+
+Create Operation
+
+    -> insertOne()
+    (Not native to Mongoose — use MongoDB driver or .create() instead)
+
+    -> insertMany()
+        Inserts an array of documents:
+        await User.insertMany([
+            { name: "John", email: "john@g.com" },
+            { name: "Jane", email: "jane@g.com" }
+        ]);
+
+    -> create()
+        Flexible method that handles one or many:
+
+        await User.create({ name: "Mike", email: "mike@g.com" });
+        await User.create([{ name: "A" }, { name: "B" }]);
+
+    -> Using Instance & save()
+        const user = new User({ name: "Sam", email: "sam@g.com" });
+        await user.save(); // Saves to DB
+
+Read Operation
+
+    -> Find one
+        const user = await User.findOne({ email: "xyz@g.com" }).lean();
+        Here, .lean() returns plain JS object (better performance, no Mongoose methods)
+
+    -> Find all
+        const users = await User.find().lean(); // Array of all users
+
+    -> Find by ID
+        const user = await User.findById("user_id").lean();
+
+Update Operation
+
+    1. Inefficient Way (2 DB Calls)
+        const user = await User.findOne({ email: "xyz@g.com" });
+        user.age = 12;
+        await user.save();
+
+    2. Efficient Way (Single DB Call)
+        const updatedUser = await User.findOneAndUpdate(
+            { email: "xyz@gg.com" },
+            { name: "Shizuka" },
+            { new: true, runValidators: true }
+        );
+
+        new: true → Returns the updated document
+        runValidators: true → Ensures validation is applied during update
+
+Delete Operation
+
+    -> Delete one by condition
+        await User.findOneAndDelete({ email: "xyz@g.com" });
+
+    -> Delete by ID
+        await User.findByIdAndDelete("user_id");
+
+    -> Delete many
+        await User.deleteMany({ age: { $lt: 18 } });

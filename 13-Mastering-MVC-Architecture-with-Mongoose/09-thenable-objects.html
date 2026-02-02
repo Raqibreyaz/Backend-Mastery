@@ -1,0 +1,43 @@
+<!--  
+Thenable Objects
+
+-> A thenable is any object with a .then() method.
+-> It acts like a promise, but isn’t necessarily created using Promise.
+-> Works with await and Promise.resolve().
+
+-> Example:
+    const thenable = {
+        then: (resolve, reject) => {
+            resolve("Done!");
+        }
+    };
+    await thenable; // Works like a promise
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Click me</button>
+    <script>
+      const obj = {
+        then: (resolve) => {
+          document
+            .querySelector("button")
+            .addEventListener("click", () => resolve("i am resolved!"));
+        },
+      };
+
+      //   obj.then(console.log);
+      (async () => {
+        "will wait till indefinite time until button is clicked!";
+        const data = await obj;
+        console.log(data);
+      })();
+    </script>
+  </body>
+</html>
