@@ -1,0 +1,13 @@
+Mongoose Document Versioning
+
+    -> Mongoose(!mongodb) uses a __v field to track how many times a document has been modified.
+
+    -> This version key is automatically incremented on .save().
+
+    -> To do it so we use optimistic concurrency option in Schema — preventing overwrites if another process updates the same document.
+
+    -> You can enable it with { optimisticConcurrency: true } in the schema.
+
+    -> Changes to arrays or subdocuments also increase __v (doesn't require optimisticConcurrency option set to true).
+
+    -> You can customize the version key or disable it using the versionKey option in Schema.
