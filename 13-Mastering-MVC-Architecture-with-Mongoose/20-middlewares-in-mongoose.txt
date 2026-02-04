@@ -1,0 +1,16 @@
+Mongoose Middleware (Hooks)
+
+Mongoose middlewares (hooks) are functions that run before (pre) or after (post) certain operations like saving, querying, inserting, or aggregating.
+
+Types of Middleware
+    -> Document Middleware (save, validate, remove)
+        Used to modify document data (e.g., hash passwords).
+
+    -> Query Middleware (find, findOne, etc.)
+        Modify or log queries (e.g., exclude inactive users).
+
+    -> Model Middleware (insertMany)
+        Modify documents before/after bulk insert.
+
+    -> Aggregate Middleware (aggregate)
+        Edit aggregation pipeline (e.g., exclude deleted docs).

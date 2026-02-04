@@ -1,0 +1,18 @@
+Custom Static Methods
+
+-> You can define model-level methods using the statics option in the schema:
+
+    const userSchema = new mongoose.Schema({
+    email: String
+    }, {
+        statics: {
+            async findByEmail(email) {
+            return this.findOne({ email });
+            }
+        }
+    });
+
+-> this refers to the model
+-> Used like: User.findByEmail("abc@example.com")
+-> You can also add them manually:
+    userSchema.statics.findByEmail = async function (email) { ... }

@@ -1,0 +1,22 @@
+Mongoose Virtuals
+
+-> Virtuals are computed properties in Mongoose documents, not stored in MongoDB.
+-> Common use: derive fullName from firstName + lastName.
+-> Mongoose adds an id virtual by default (string version of _id).
+
+Creating Virtuals
+    -> Getter only
+        schema.virtual('fullName').get(() => ...)
+    -> Getter + Setter
+        schema.virtual('fullName').get(() => ...).set(val => ...)
+
+Accessing Virtuals
+    -> Enable in output
+        doc.toJSON({ virtuals: true })
+        doc.toObject({ virtuals: true })
+    -> Schema-level access: schema.virtuals
+
+Virtuals & .lean()
+    -> By default, virtuals do not work with .lean().
+    -> To include them:
+        Model.find().lean({ virtuals: true })
