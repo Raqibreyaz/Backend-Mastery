@@ -1,0 +1,30 @@
+JWT (JSON Web Token)
+
+Used for authentication & authorization
+    Works in server–server architectures and not recomended for client–server.
+    uses hmac based sha256. 
+
+JWT Structure: 
+    <header>.<payload>.<signature>
+
+1. Header Includes:
+        algorithm (alg)
+        type: JWT
+
+2. Payload Contains: 
+        user data (claims)
+
+3. Signature Created using:
+        header + payload + secret / private key
+
+Token creation:
+    const token = jwt.sign({name: "john"}, "secretkey", {  
+        algorithm: "HS256", //goes in header
+        expiresIn: 3, // time in seconds , added in payload
+    }); // adds issuesAt i.e iat by default in payload
+
+Token verification:
+    jwt.verify(token, "secretkey") //returns payload object if verifies else TokenExpiredError
+
+Token Decode:
+    jwt.decode(header.payload.)
