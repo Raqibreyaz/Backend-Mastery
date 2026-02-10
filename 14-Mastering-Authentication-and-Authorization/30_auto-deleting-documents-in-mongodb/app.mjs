@@ -15,7 +15,7 @@ const fruitSchema = new mongoose.Schema({
 const Fruit = mongoose.model("Fruit", fruitSchema);
 
 await mongoose.connect(
-  "mongodb://admin:admin@localhost:27017/test?authSource=admin"
+  "mongodb://admin:admin@localhost:27017/test?authSource=admin",
 );
 
 await Fruit.create({
