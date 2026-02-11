@@ -14,9 +14,7 @@ async function fetchIdToken() {
     body,
   });
   const data = await res.json();
-  console.log(data);
   const userToken = data.id_token.split(".")[1];
-  console.log(userToken);
   const userData = JSON.parse(atob(userToken));
   console.log(userData);
 }
