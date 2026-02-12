@@ -9,34 +9,21 @@
   <body style="background-color: #27292d; color: white">
     <button class="button" style="color: red">Google Login</button>
     <script>
-      const client_id = `233479796620-euvqpn89coqtru5upn67dkg3ba3tq0i0.apps.googleusercontent.com`;
-      const redirect_uri = `http://localhost:3000/callback.html`;
-      const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${client_id}&scope=openid%20email%20profile&redirect_uri=${redirect_uri}`;
-
       const button = document.querySelector(".button");
 
+      // open google auth window
       button.addEventListener("click", () => {
         window.open(
-          authUrl,
+          "http://localhost:8080/auth/google",
           "login-popup",
           "left=200,top=200,height=420,width=420",
         );
       });
 
-      async function loginUser({ data: { code } }) {
-        const res = await fetch("http://localhost:8080/google/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-          body: JSON.stringify({ code }),
-        });
-        console.log(res);
-        if (res.ok) location.href = "/";
-      }
-
-      window.addEventListener("message", loginUser);
+      // listen for child-tab message
+      window.addEventListener("message", (event) => {
+        if (event.data.message === "success") location.href = "/";
+      });
     </script>
   </body>
 </html>

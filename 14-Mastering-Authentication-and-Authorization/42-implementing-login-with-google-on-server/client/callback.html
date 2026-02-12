@@ -7,15 +7,27 @@
   </head>
   <body>
     <h1>Google Callback</h1>
+    <p class="response"></p>
     <script>
       if (window.name === "login-popup") {
-        const code = new URLSearchParams(location.search).get("code");
-        if (code) {
-          window.opener.postMessage({ code });
-          setTimeout(() => {
+        const sid = new URLSearchParams(location.search).get("sid");
+        (async function () {
+          const res = await fetch(
+            "http://localhost:8080/auth/google/set-cookie",
+            {
+              body: JSON.stringify({ sid }),
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              credentials: "include",
+            },
+          );
+          if (res.ok) {
+            window.opener.postMessage({ message: "success" });
             window.close();
-          }, 2000);
-        }
+          }
+        })();
       }
     </script>
   </body>

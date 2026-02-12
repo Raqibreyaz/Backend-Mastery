@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import fs, { writeFile } from "fs/promises";
-import { createSession, fetchIdToken } from "./utils.js";
+import { fetchIdToken, getAuthUrl } from "./utils.js";
 import usersDB from "./usersDB.json" with { type: "json" };
 import sessionsDB from "./sessionsDB.json" with { type: "json" };
 
@@ -12,16 +12,23 @@ app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(cookieParser("my-secret-key"));
 app.use(express.json());
 
-app.post("/google/login", async (req, res) => {
-  const { sid } = req.signedCookies;
+app.get("/auth/google", (req, res) => {
+  res.redirect(getAuthUrl());
+});
 
-  let session = sid ? sessionsDB.find(({ id }) => sid === id) : null;
-  if (session) return res.json({ message: "user already logged in!" });
+app.get("/auth/google/callback", async (req, res) => {
+  const { code } = req.query;
 
-  const { code } = req.body;
+  console.log(code);
+
   const userData = await fetchIdToken(code);
+
+  console.log(userData);
+
   const user = usersDB.find((user) => user.id === userData.sub);
-  session = user ? sessionsDB.find(({ userId }) => userId === user.id) : null;
+  let session = user
+    ? sessionsDB.find(({ userId }) => userId === user.id)
+    : null;
 
   // when user not exists then create
   if (!user) {
@@ -45,16 +52,21 @@ app.post("/google/login", async (req, res) => {
     await writeFile("./sessionsDB.json", JSON.stringify(sessionsDB, null, 2));
   }
 
+  res.redirect(`http://localhost:3000/callback.html?sid=${session.id}`);
+});
+
+app.post("/auth/google/set-cookie", (req, res) => {
+  const { sid } = req.body;
   res
     .status(200)
-    .cookie("sid", session.id, {
+    .cookie("sid", sid, {
       maxAge: 1000 * 86400,
       signed: true,
       httpOnly: true,
       sameSite: "none",
       secure: true,
     })
-    .json({ success: true, message: "user logged in successfully!" });
+    .end();
 });
 
 app.get("/profile", (req, res) => {

@@ -1,9 +1,7 @@
-import { writeFile } from "fs/promises";
-
 const clientId =
   "233479796620-euvqpn89coqtru5upn67dkg3ba3tq0i0.apps.googleusercontent.com";
 const clientSecret = "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";
-const redirectUri = `http://localhost:3000/callback.html`;
+const redirectUri = "http://localhost:8080/auth/google/callback";
 
 export async function fetchIdToken(code) {
   const body = `code=${code}&client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=${redirectUri}&grant_type=authorization_code`;
@@ -21,8 +19,7 @@ export async function fetchIdToken(code) {
   return userData;
 }
 
-export async function createSession(sessionsDB) {
-  const sessionId = crypto.randomUUID();
-  sessionsDB.push({ id: sessionId, userId: userData.sub });
-  await writeFile("./sessionsDB.json", JSON.stringify(sessionsDB, null, 2));
+export function getAuthUrl() {
+  const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${clientId}&scope=openid%20email%20profile&redirect_uri=${redirectUri}`;
+  return authUrl;
 }
