@@ -2,3 +2,4 @@ node_modules
 uploads
 log.json
 findings.json
+*secret*
