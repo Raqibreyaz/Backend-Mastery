@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .profile-image {
+        width: 40px;
+        border-radius: 100%;
+      }
+      .logout-btn {
+        display: block;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Your Profile</h1>
+      <h2 class="name">Name</h2>
+      <h2 class="email">Email</h2>
+      <img class="profile-image" />
+      <button type="button" class="logout-btn">Logout</button>
+    </div>
+    <script type="module">
+      const name = document.querySelector(".name");
+      const email = document.querySelector(".email");
+      const profileImage = document.querySelector(".profile-image");
+      const logoutBtn = document.querySelector(".logout-btn");
+
+      const baseUrl = "http://localhost:8080";
+      const response = await fetch(`${baseUrl}/profile`, {
+        credentials: "include",
+      });
+      if (response.status === 401) location.href = "/login";
+
+      const responseData = await response.json();
+
+      name.innerText = responseData.user.name;
+      email.innerText = responseData.user.email;
+      profileImage.src = responseData.user.picture;
+
+      logoutBtn.addEventListener("click", async () => {
+        const res = await fetch(`${baseUrl}/logout`, {
+          credentials: "include",
+          method: "POST",
+        });
+        if (res.ok) location.href = "/login";
+      });
+    </script>
+  </body>
+</html>
