@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body style="background-color: #27292d; color: white">
+    <button class="button" style="color: red">Google Login</button>
+    <script>
+      const clientId =
+        "233479796620-ch30kn6215kfo0rjln4kk5r6nmt0us29.apps.googleusercontent.com";
+      const redirectUri = "http://localhost:3000/callback.html";
+      const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=id_token&nonce=raquib123&client_id=${clientId}&scope=openid%20email%20profile&redirect_uri=${redirectUri}`;
+
+      const button = document.querySelector(".button");
+
+      // open google auth window
+      button.addEventListener("click", () => {
+        window.open(
+          authUrl,
+          "login-popup",
+          "left=200,top=200,height=420,width=420",
+        );
+      });
+
+      // listen for child-tab message
+      window.addEventListener("message", (event) => {
+        if (event.data.message === "success") location.href = "/";
+        if (event.data.error) alert(event.data.error);
+      });
+    </script>
+  </body>
+</html>

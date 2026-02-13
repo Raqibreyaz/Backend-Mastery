@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: rgba(0, 0, 0, 0.788)">
+    <a
+      href="https://accounts.google.com/o/oauth2/v2/auth?response_type=id_token&client_id=233479796620-ch30kn6215kfo0rjln4kk5r6nmt0us29.apps.googleusercontent.com&scope=openid%20email%20profile&redirect_uri=http://localhost:3000&nonce=raquib123"
+      >Login with Google</a
+    >
+    <script type="module">
+      const idToken = new URLSearchParams(location.hash.slice(1)).get(
+        "id_token",
+      );
+      console.log(idToken)
+      console.log(atob(idToken));
+    </script>
+  </body>
+</html>
