@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body style="background-color: #27292d; color: white">
+    <button class="button" style="color: red">Google Login</button>
+    <script>
+      const button = document.querySelector(".button");
+
+      // open google auth window
+      button.addEventListener("click", () => {
+        window.open(
+          "http://localhost:8080/auth/google",
+          "login-popup",
+          "left=200,top=200,height=420,width=420",
+        );
+      });
+
+      // listen for child-tab message
+      window.addEventListener("message", (event) => {
+        if (event.data.message === "success") location.href = "/";
+        if (event.data.error) alert(event.data.error);
+      });
+    </script>
+  </body>
+</html>

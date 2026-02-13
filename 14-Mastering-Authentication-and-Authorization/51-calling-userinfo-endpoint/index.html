@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      const accessToken = "";
+      //   const res = await fetch(
+      //       `https://openidconnect.googleapis.com/v1/userinfo?access_token=${accessToken}`,
+      //     );
+      const res = await fetch(
+        "https://openidconnect.googleapis.com/v1/userinfo",
+        { headers: { Authorization: `Bearer ${accessToken}` } },
+      );
+      const userData = await res.json();
+      console.log(userData);
+    </script>
+  </body>
+</html>
