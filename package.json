@@ -10,9 +10,12 @@
     "mongodb": "^7.0.0",
     "mongoose": "^9.1.5",
     "multer": "^2.0.2",
-    "nodemailer": "^8.0.1"
+    "nodemailer": "^8.0.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
-    "@types/node": "^25.0.10"
+    "@types/node": "^25.0.10",
+    "@types/passport-google-oauth20": "^2.0.17"
   }
 }

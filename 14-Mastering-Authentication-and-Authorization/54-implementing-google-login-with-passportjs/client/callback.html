@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Google Callback</h1>
+    <p class="response"></p>
+    <script type="module">
+      if (window.name === "login-popup") {
+        const sid = new URLSearchParams(location.search).get("sid");
+        document.querySelector(".response").innerText = sid;
+        console.log(sid);
+
+        if (sid) {
+          const res = await fetch(
+            "http://localhost:8080/auth/google/set-cookie",
+            {
+              body: JSON.stringify({ sid }),
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              credentials: "include",
+            },
+          );
+          if (res.ok) {
+            window.opener.postMessage({ message: "success" });
+          } else {
+            window.opener.postMessage({ error: "error occured!" });
+          }
+        } else {
+          const error = new URLSearchParams(location.search).get("error");
+          window.opener.postMessage({ error });
+        }
+        window.close();
+      }
+    </script>
+  </body>
+</html>
