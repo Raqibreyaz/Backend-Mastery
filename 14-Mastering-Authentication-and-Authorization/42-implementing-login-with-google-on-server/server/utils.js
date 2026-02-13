@@ -1,7 +1,9 @@
-const clientId =
-  "233479796620-euvqpn89coqtru5upn67dkg3ba3tq0i0.apps.googleusercontent.com";
-const clientSecret = "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";
+import { OAuth2Client } from "google-auth-library";
+
+const clientId = "<client_id>";
+const clientSecret = "<client_secret>";
 const redirectUri = "http://localhost:8080/auth/google/callback";
+const client = new OAuth2Client();
 
 export async function fetchIdToken(code) {
   const body = `code=${code}&client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=${redirectUri}&grant_type=authorization_code`;
@@ -14,9 +16,13 @@ export async function fetchIdToken(code) {
     body,
   });
   const data = await res.json();
-  const userToken = data.id_token.split(".")[1];
-  const userData = JSON.parse(atob(userToken));
-  return userData;
+
+  const loginTicket = await client.verifyIdToken({
+    idToken: data.id_token,
+    audience: clientId,
+  });
+
+  return loginTicket.getPayload()
 }
 
 export function getAuthUrl() {
