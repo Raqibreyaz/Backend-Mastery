@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .profile-image {
+        width: 40px;
+        border-radius: 100%;
+      }
+      .logout-btn {
+        display: block;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Your Profile</h1>
+      <h2 class="name">Name</h2>
+      <h2 class="email">Email</h2>
+      <img class="profile-image" />
+      <button type="button" class="logout-btn">Logout</button>
+    </div>
+    <script type="module">
+      const name = document.querySelector(".name");
+      const email = document.querySelector(".email");
+      const profileImage = document.querySelector(".profile-image");
+      const logoutBtn = document.querySelector(".logout-btn");
+
+      const baseUrl = "http://localhost:8080";
+      const response = await fetch(`${baseUrl}/profile`, {
+        credentials: "include",
+      });
+      if (response.status === 401) location.href = "/login";
+
+      const responseData = await response.json();
+
+      name.innerText = responseData.user.name;
+      email.innerText = responseData.user.email;
+      profileImage.src = responseData.user.picture;
+
+      logoutBtn.addEventListener("click", async () => {
+        const res = await fetch(`${baseUrl}/logout`, {
+          credentials: "include",
+          method: "POST",
+        });
+        if (res.ok) location.href = "/login";
+      });
+
+      ("https://accounts.google.com/v3/signin/accountchooser?as=O16zCDUIyH1e0bkgRiNWTwI-f4hw_kyQDfX9TLb1NTo&client_id=233479796620-ch30kn6215kfo0rjln4kk5r6nmt0us29.apps.googleusercontent.com&display=popup&gis_params=ChVodHRwOi8vbG9jYWxob3N0OjMwMDASDWdpc190cmFuc2Zvcm0YByorTzE2ekNEVUl5SDFlMGJrZ1JpTldUd0ktZjRod19reVFEZlg5VExiMU5UbzJIMjMzNDc5Nzk2NjIwLWNoMzBrbjYyMTVrZm8wcmpsbjRrazVyNm5tdDB1czI5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tOAFCQGNiNzQxMzM1N2ZjZGM0MWU4MWIxMTQ0ZTZjNmFmYWFlYjUwZTgzYzg5NDdmOWU2YjlkNDI2MzViYzE3ZDhhY2I&gsiwebsdk=gis_attributes&origin=http%3A%2F%2Flocalhost%3A3000&prompt=select_account&redirect_uri=gis_transform&response_mode=form_post&response_type=id_token&scope=openid+email+profile&dsh=O16zCDUIyH1e0bkgRiNWTwI-f4hw_kyQDfX9TLb1NTo&o2v=1&service=lso&flowName=GeneralOAuthFlow&opparams=%253Fgis_params%253DChVodHRwOi8vbG9jYWxob3N0OjMwMDASDWdpc190cmFuc2Zvcm0YByorTzE2ekNEVUl5SDFlMGJrZ1JpTldUd0ktZjRod19reVFEZlg5VExiMU5UbzJIMjMzNDc5Nzk2NjIwLWNoMzBrbjYyMTVrZm8wcmpsbjRrazVyNm5tdDB1czI5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tOAFCQGNiNzQxMzM1N2ZjZGM0MWU4MWIxMTQ0ZTZjNmFmYWFlYjUwZTgzYzg5NDdmOWU2YjlkNDI2MzViYzE3ZDhhY2I%2526response_mode%253Dform_post&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAP-8hrXK11oc1daczcfio1_SZyxmfdtkNsNiSBi9J7X7t_Q9qmd6LBEBJ3ic2m6M3M61FIzgOjV1ywqV1TEwzgThvuM8YKpevmZRk2aOl4qXWlSdAoexYp4UkF8aZ22oksN805Ja6fAQkLGgsSITaQ4kVkbAhgISLAJFuJbA6k3cZy9zwRKneyKznJlwM1v18tHoLn46L-yJkSY0igMBnKXagUVzM7kfc3AiAmSHMJaIA_fgX49zAZBjmGqlbI1YOk6W1tWt_PVZ5LoVRwKpdThxM97u4hhskF3c456a2QZDQpMDe-OOXUd0Cj5GtW1Dy8pW088nN77QYwZI7RamfLx02wPavmltXZTKHl1gkUYSEJPr6dN9F0w9OUy20vvWtcXuSc8MOP6S3-FKK1CyboHJeiP71AnRecgCPDA8OInK714Mhk8BT-miceF_jOau-7gdomvQRU9Mdq5iCdoLQASx7P4WqPdt0GYf9OAgb4k4HoNkzc%26flowName%3DGeneralOAuthFlow%26as%3DO16zCDUIyH1e0bkgRiNWTwI-f4hw_kyQDfX9TLb1NTo%26client_id%3D233479796620-ch30kn6215kfo0rjln4kk5r6nmt0us29.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=http%3A%2F%2Flocalhost%3A3000");
+    </script>
+  </body>
+</html>

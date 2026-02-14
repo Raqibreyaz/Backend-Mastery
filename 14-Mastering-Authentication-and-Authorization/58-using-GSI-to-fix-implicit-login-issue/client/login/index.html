@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <title>Document</title>
+  </head>
+
+  <body style="background-color: #27292d; color: white">
+    <!-- <div
+      id="g_id_onload"
+      data-client_id="233479796620-ch30kn6215kfo0rjln4kk5r6nmt0us29.apps.googleusercontent.com"
+      data-context="signin"
+      data-ux_mode="popup"
+      data-callback="googleLoginCallback"
+      data-auto_prompt="false"
+    ></div>
+
+    <div
+      class="g_id_signin"
+      data-type="standard"
+      data-shape="rectangular"
+      data-theme="outline"
+      data-text="continue_with"
+      data-size="large"
+      data-logo_alignment="left"
+    ></div> -->
+    <div class="google-login"></div>
+    <script>
+      async function googleLoginCallback({ credential: idToken }) {
+        console.log(idToken);
+        const res = await fetch("http://localhost:8080/auth/google/callback", {
+          body: JSON.stringify({ idToken }),
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        });
+
+        if (res.ok) location.href = "/";
+      }
+      
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id:
+            "<client_id>",
+          callback: googleLoginCallback,
+        });
+        
+        // render the button
+        google.accounts.id.renderButton(
+          document.querySelector(".google-login"),
+          { theme: "filled-blue", shape: "pill" },
+        );
+
+        // opens the one-click login prompt
+        google.accounts.id.prompt();
+      };
+    </script>
+  </body>
+</html>
