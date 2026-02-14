@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Login Demo</title>
+  </head>
+  <body>
+    <button id="github-login">Login with GitHub</button>
+    <script type="module">
+      const loginBtn = document.querySelector("#github-login");
+      const client_id = "<client_id>";
+      const redirect_uri = "http://localhost:8080/auth/github/callback";
+
+      function generateState(len = 32) {
+        const chars =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let s = "";
+        for (let i = 0; i < len; i++)
+          s += chars[Math.floor(Math.random() * chars.length)];
+        return s;
+      }
+
+      loginBtn.addEventListener("click", () => {
+        const state = generateState();
+        sessionStorage.setItem("oauth_state", state);
+
+        const params = new URLSearchParams({
+          client_id,
+          redirect_uri,
+          scope: "user:email", // or omit if you only need public info
+          state,
+          // optional: allow_signup: "true"
+        });
+
+        window.location.href = `https://github.com/login/oauth/authorize?${params.toString()}`;
+      });
+    </script>
+  </body>
+</html>

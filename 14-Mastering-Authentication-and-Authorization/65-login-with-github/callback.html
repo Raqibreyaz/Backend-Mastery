@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Redirected Page</h1>
+    <script type="module">
+      const code = new URLSearchParams(location.search).get("code");
+      if (code) {
+        const client_id = "<client_id>";
+        const client_secret = "<client_secret>";
+        const redirect_uri = "http://localhost:3000/callback.html";
+        const code_verifier = "";
+
+        const params = new URLSearchParams({
+          client_id,
+          client_secret,
+          redirect_uri,
+          //   code_verifier,
+        });
+
+        const res = await fetch(
+          `https://github.com/login/oauth/access_token?${params.toString()}`,
+          {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+            },
+          },
+        );
+        console.log(res);
+        const data = await res.json();
+        console.log(data);
+      }
+    </script>
+  </body>
+</html>
