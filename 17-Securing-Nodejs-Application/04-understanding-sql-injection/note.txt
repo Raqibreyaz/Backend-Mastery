@@ -1,0 +1,15 @@
+SQL Injection / NoSQL Injection
+
+    Even though MongoDB doesn’t use SQL, it can still be hacked if you don’t handle user input properly. This is called NoSQL Injection.
+
+    What Can Go Wrong?
+        -> If you directly use user input in a query, a hacker can trick the database.
+        -> Example (Bad code):
+
+            User.findOne({ email: req.body.email, password: req.body.password });
+            -> If someone sends special values like { "$ne": null }, they can log in without the correct password.
+
+    How to Stay Safe
+        -> Use validations – It checks that the input is in the right format.
+        -> Check user input – Make sure it's a string and not an object.
+        -> Don’t use raw JSON from users – Never trust JSON objects in requests.
