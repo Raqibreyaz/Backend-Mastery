@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social App</title>
+  </head>
+
+  <body>
+    <h1>My Social Media App</h1>
+    <iframe
+      style="border: 1px solid"
+      src="http://127.0.0.1:5500/about.html"
+      frameborder="0"
+    ></iframe>
+
+    <script>
+      const iframe = document.querySelector("iframe");
+      iframe.addEventListener("load", () => {
+        console.log(iframe.contentDocument);
+        const aboutHeading =
+          iframe.contentDocument.querySelector(".blog-heading");
+        console.log(aboutHeading);
+
+        console.log(iframe.contentWindow.document);
+      });
+    </script>
+  </body>
+</html>
