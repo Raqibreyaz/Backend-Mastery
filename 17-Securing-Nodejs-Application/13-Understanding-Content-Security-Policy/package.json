@@ -1,0 +1,10 @@
+{
+    "type": "module",
+    "scripts": {
+        "dev": "node --watch app.js"
+    },
+    "dependencies": {
+        "express": "^5.1.0",
+        "mongoose": "^8.16.0"
+    }
+}
