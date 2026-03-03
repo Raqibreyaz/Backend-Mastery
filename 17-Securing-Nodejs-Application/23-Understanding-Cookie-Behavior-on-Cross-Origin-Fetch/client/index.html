@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js" type="module"></script>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Our App's UI</h1>
+    <div class="user-profile hidden">
+      <p><b>Name: </b> <span class="name"></span></p>
+      <p><b>Email: </b> <span class="email"></span></p>
+    </div>
+    <form class="login-form">
+      <input type="text" name="email" value="sanjayrawat@gmail.com" hidden />
+      <input type="password" name="password" value="sanjay@123" hidden />
+      <button>Login</button>
+    </form>
+  </body>
+</html>

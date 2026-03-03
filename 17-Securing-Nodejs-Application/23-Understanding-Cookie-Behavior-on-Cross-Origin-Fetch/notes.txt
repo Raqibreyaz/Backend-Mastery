@@ -1,0 +1,10 @@
+sameSite: "strict"
+=> browser will never send cookie to cross site request
+
+sameSite:"lax"
+=> browser will only send cookie to sames-site and cross-site with GET top-level navigation
+=> browser can store cookie from cross-site response even when non-get request if the request was a top-level navigation
+=> allows cookie in same sub-domain requests even if whole domain is different
+
+sameSite:"none"(with secured:true mandatory)
+=> browser will send cookie same or cross-site both only on a secure https connection

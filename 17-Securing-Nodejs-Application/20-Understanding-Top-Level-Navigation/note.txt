@@ -1,0 +1,17 @@
+⚡ What is it?
+    -> When a webpage is loaded directly in the main browser window/tab (the address bar URL).
+    -> Not inside an iframe, embedded element, or popup.
+
+⚡ How does it work?
+    -> When you click a link or type a URL, the browser loads that site in the topmost browsing context (the tab).
+    -> Browser treats this as a full page navigation.
+
+⚡ Why is it important?
+    -> Security: Cookies with SameSite=Lax are only sent during top-level navigations, protecting against CSRF.
+    -> Permissions: APIs like camera/microphone often require top-level context.
+    -> User Control: Ensures the user is knowingly visiting the site (not hidden in an iframe).
+
+⚡ Examples
+    ✅ Visiting https://example.com directly in your browser → Top-level navigation.
+    ❌ example.com loaded inside an iframe on attacker.com → Not top-level navigation.
+    ✅ Clicking a Google search result that loads news.com in the tab → Top-level navigation.
