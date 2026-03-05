@@ -26,6 +26,15 @@ app.use((req, res, next) => {
   next();
 });
 
+app.post(
+  "/csp-violations",
+  express.json({ type: "application/csp-report" }),
+  async (req, res) => {
+    console.log(req.body);
+    res.status(204).end();
+  },
+);
+
 const postSchema = new mongoose.Schema({
   content: String,
   createdAt: { type: Date, default: Date.now },
@@ -49,14 +58,6 @@ app.post("/posts", async (req, res) => {
   res.status(201).json(post);
 });
 
-app.post(
-  "/csp-violations",
-  express.json({ type: "application/csp-report" }),
-  async (req, res) => {
-    console.log(req.body);
-    res.status(204).end();
-  },
-);
 
 // Start server
 app.listen(4000, () => console.log("Server running on http://localhost:4000"));
