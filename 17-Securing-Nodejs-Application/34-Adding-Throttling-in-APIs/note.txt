@@ -1,0 +1,24 @@
+⚡ What is Throttling?
+    -> Throttling means slowing down or limiting how many requests/actions a user or system can do in a time period.
+    -> It’s like a speed breaker for your API or app to avoid overload.
+
+⚡ Why do we use Throttling?
+    -> Protects servers from too many requests at once.
+    -> Stops abuse (bots, scrapers, brute-force).
+    -> Keeps things fair so one user can’t block others.
+    -> Saves costs (CPU, memory, bandwidth).
+
+⚡ How does Throttling work? (Simple view)
+    -> You set a limit: e.g., “100 requests per minute.”
+    -> If someone sends requests too fast:
+        -> You delay extra requests, or
+        -> You reject them with an error, or
+        -> You queue them to run later at a safe speed.
+
+⚡ Where is Throttling used?
+    -> APIs (public/private).
+    -> Login and OTP endpoints (to stop brute-force).
+    -> Search and filter endpoints (they’re heavy).
+    -> Payments/checkout (prevent spam and errors).
+    -> File uploads/downloads (bandwidth control).
+    -> Mobile apps and browsers (limit rapid clicks/calls).
