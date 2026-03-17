@@ -1,0 +1,11 @@
+body {
+  background-color: #27292d;
+  color: white;
+  font-family: cursive;
+}
+
+img {
+  width: 400px;
+  border-radius: 16px;
+  border: 2px solid white;
+}
