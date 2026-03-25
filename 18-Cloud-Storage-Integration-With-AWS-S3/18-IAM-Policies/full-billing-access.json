@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "BillingFullAccess",
+            "Effect": "Allow",
+            "Action": [
+                "aws-portal:*",
+                "budgets:*",
+                "ce:*",
+                "cur:*",
+                "payments:*",
+                "billingconductor:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
