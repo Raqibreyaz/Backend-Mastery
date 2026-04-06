@@ -1,0 +1,21 @@
+Cache Invalidation
+
+-> In AWS CloudFront, cache invalidation refers to the process of removing specific objects (files) from the CloudFront edge caches before they expire.
+
+Why it exists:
+    -> CloudFront caches your content (HTML, CSS, JS, images, etc.) at edge locations for faster delivery.
+    -> Each cached object has a Time-to-Live (TTL) that you set in the response headers (Cache-Control / Expires) or in CloudFront behaviors.
+    -> But sometimes you update a file (say style.css) on your origin (S3, EC2, etc.), and CloudFront still serves the old cached version until TTL expires.
+    -> To force CloudFront to fetch the new version, you use invalidation.
+
+How Invalidation Works
+    -> You create an invalidation request in CloudFront.
+    -> You specify the path(s) to invalidate, e.g.
+        /index.html → clears just the homepage
+        /images/* → clears everything under /images/
+        /* → clears the entire distribution (more expensive)
+    -> After invalidation, the next request to that object will go back to your origin, fetch the latest version, and cache it again.
+
+Cost
+    -> The first 1,000 paths per month are free.
+    -> After that, you pay per invalidation path (unless you use /*, which counts as 1 path regardless of number of files).
