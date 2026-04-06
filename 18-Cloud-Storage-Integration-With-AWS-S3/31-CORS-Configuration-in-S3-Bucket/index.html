@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <form id="form">
+        <input type="file" />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+    <script>
+      async function handleSubmit(event) {
+        event.preventDefault();
+        const file = event.target[0].files?.[0];
+        console.log(file);
+
+        const res = await fetch("s3_object_url", { method: "PUT", body: file });
+
+        const body = await res.text();
+        console.log(body);
+      }
+
+      document.querySelector("#form").addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>
