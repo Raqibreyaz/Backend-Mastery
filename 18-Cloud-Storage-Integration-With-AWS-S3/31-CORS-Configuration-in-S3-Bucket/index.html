@@ -17,8 +17,12 @@
         event.preventDefault();
         const file = event.target[0].files?.[0];
         console.log(file);
+        console.log(file);
 
-        const res = await fetch("s3_object_url", { method: "PUT", body: file });
+        const res = await fetch(
+          "signed_url_of_object",
+          { method: "PUT", body: file },
+        );
 
         const body = await res.text();
         console.log(body);
