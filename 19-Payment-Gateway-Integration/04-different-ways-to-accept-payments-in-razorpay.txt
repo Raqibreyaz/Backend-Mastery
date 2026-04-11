@@ -1,0 +1,45 @@
+Different Ways to Receive Payments in Razorpay
+
+1. Payment Links
+    -> You create a unique link and send it via WhatsApp, SMS, Email, or social media.
+    -> Customer clicks the link → pays using UPI, card, wallet, etc.
+    -> Best for freelancers, small shops, or one-time payments.
+
+2. Payment Pages
+    -> Ready-made mini-website created inside Razorpay (no coding needed).
+    -> You can add your logo, product details, and pricing.
+    -> Customer visits the page and pays directly.
+    -> Example: “Buy tickets”, “Donate now” pages.
+
+3. Payment Buttons
+    -> Small button you can put on your website/blog.
+    -> Example: “Pay Now” or “Donate” button.
+    -> Clicking it opens Razorpay’s checkout.
+    -> Useful for simple websites without heavy backend.
+
+4. Checkout (Integration in Website/App)
+    -> Razorpay’s checkout form is integrated into your app/website.
+    -> Users stay on your site, choose payment method, and pay.
+    -> Supports UPI, cards, wallets, net banking, EMI.
+    -> Best for professional e-commerce sites.
+
+5. QR Codes
+    -> Razorpay lets you generate UPI QR codes.
+    -> Customer scans with Google Pay, PhonePe, Paytm, etc.
+    -> Amount can be fixed or open.
+    -> Great for shops, restaurants, offline use.
+
+6. Subscriptions
+    -> For recurring payments (monthly/yearly).
+    -> Example: Netflix, gym memberships, SaaS tools.
+    -> Razorpay auto-deducts amount as per plan.
+
+7. Invoices
+    -> Create a professional invoice in Razorpay with customer name, amount, due date.
+    -> Invoice includes a payment link.
+    -> Customer can pay directly from the invoice.
+
+8. Smart Collect (Virtual Accounts & UPI IDs)
+    -> Razorpay gives you a unique bank account/UPI ID for each customer.
+    -> Customer transfers money → Razorpay auto-tracks and settles.
+    -> Best for businesses handling bulk/enterprise payments.
