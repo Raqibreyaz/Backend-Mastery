@@ -1,0 +1,25 @@
+Basic Auth:
+
+⚡ Definition:
+    A simple HTTP authentication method where the client sends a username and password to the server.
+
+⚡ Process:
+    -> Client requests a protected resource.
+    -> Server responds with 401 Unauthorized and asks for credentials.
+    -> Client encodes username:password in Base64.
+    -> Adds it to the request header:
+        Authorization: Basic <Base64-credentials>
+    -> Server decodes and verifies.
+
+⚡ Security:
+    -> Base64 ≠ encryption, just encoding.
+    -> Vulnerable if used without HTTPS (credentials can be stolen).
+    -> Credentials are sent with every request.
+
+⚡ Use Cases:
+    -> Internal tools, simple APIs, testing, or temporary setups.
+    -> Always combined with HTTPS in real-world use.
+
+⚡ Limitations:
+    -> Weak compared to modern methods (Bearer tokens, JWT).
+    -> High risk if intercepted.

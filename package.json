@@ -21,6 +21,7 @@
     "nodemailer": "^8.0.1",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
+    "razorpay": "^2.9.6",
     "redis": "^5.11.0",
     "zod": "^4.3.6"
   },

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+  <body style="background-color: rgb(29, 24, 24); color: white">
+    <h1>Payments Testing</h1>
+    <button id="btn">Pay</button>
+    <script>
+      const options = {
+        key: "<api_key>",
+        amount: 5000,
+        // image: "http://localhost:5500/fat-fs.png",
+        prefill: {
+          name: "Banaras",
+          email: "Banaras@banaras.com",
+          contact: "+919876543210",
+        },
+        // currency: "USD",
+        notes: {
+          cloth: "banarasi saree",
+        },
+        theme: {
+          color: "#3399c",
+        },
+        handler: function (response) {
+          console.log(response);
+        },
+      };
+
+      const rzp = new Razorpay(options);
+
+      rzp.on("payment.failed", (response) => {
+        console.log(response);
+      });
+
+      document.querySelector("#btn").addEventListener("click", (event) => {
+        rzp.open();
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

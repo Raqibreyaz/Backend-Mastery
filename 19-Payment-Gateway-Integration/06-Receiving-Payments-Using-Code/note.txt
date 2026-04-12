@@ -1,0 +1,10 @@
+On the client side
+- Razorpay’s web integration loads https://checkout.razorpay.com/v1/checkout.js
+- creates a Razorpay(options) instance, and opens the modal when the user clicks Pay.
+- The frontend can pass fields like key, amount, currency, name, description, image, order_id, prefill, notes, and theme
+
+# Razorpay’s flow explicitly says the order must be created using the Orders API, and that is a server-side API call authenticated with your key secret.
+
+# Razorpay also marks signature verification as mandatory, and that verification requires your key_secret, which must stay on the server and must never be exposed in frontend code.
+
+# After success, the checkout returns razorpay_payment_id, razorpay_order_id, and razorpay_signature, and Razorpay instructs you to send those fields to your server and verify them there

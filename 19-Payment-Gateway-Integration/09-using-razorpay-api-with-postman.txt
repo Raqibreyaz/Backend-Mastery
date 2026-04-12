@@ -1,0 +1,16 @@
+Generate your Test or Live API keys from the Razorpay Dashboard before making requests in Postman.
+
+Razorpay APIs use Basic Authentication, so in Postman you typically pass key_id as username and key_secret as password.
+
+You can start quickly by forking Razorpay’s public Postman collection instead of creating every request manually.
+
+A common first API is POST /v1/orders, which creates an order using fields like amount, currency, receipt, and optional notes.
+
+Razorpay’s Orders APIs also let you fetch all orders, fetch an order by ID, fetch payments for an order, and update an order.
+
+Postman is useful here because you can send the request, inspect headers and body, and verify the API response before integrating it into frontend or backend code.
+
+Example request
+For creating an order in Postman, use POST https://api.razorpay.com/v1/orders with content-type: application/json and a JSON body containing the amount and currency.
+
+Example body: { "amount": 5000, "currency": "INR", "receipt": "receipt#1" }, where the amount is sent in the smallest currency unit(paise)
