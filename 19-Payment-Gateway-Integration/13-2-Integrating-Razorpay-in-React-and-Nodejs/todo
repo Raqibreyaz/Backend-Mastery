@@ -1,0 +1,6 @@
+- create user session to know who the buyer is
+- cart functionality
+    - cart page
+    - show total price considering all chosen courses
+    - for checkout, send every chosen course id
+- if course already bought then dont show add to cart

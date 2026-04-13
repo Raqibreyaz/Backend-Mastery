@@ -1,0 +1,38 @@
+[
+    {
+        "id": "64fa1c9e3b7d92001c4a7f21",
+        "name": "Node.js Fundamentals Course",
+        "price": 4999,
+        "image": "https://i.ytimg.com/vi/RdkoOdZYNGw/hqdefault.jpg"
+    },
+    {
+        "id": "64fb2d7a9f4c11002e6d3c48",
+        "name": "The Complete JavaScript Course",
+        "price": 2999,
+        "image": "https://i.ytimg.com/vi/9P9h5h9kBmU/hqdefault.jpg"
+    },
+    {
+        "id": "64f9ef2b7a3c450018a9d6b2",
+        "name": "The Complete React Course",
+        "price": 3999,
+        "image": "https://i.ytimg.com/vi/_rTCzxg6VmM/hqdefault.jpg"
+    },
+    {
+        "id": "64fc0a6d2f8a5300291f7e63",
+        "name": "The Complete Next.js Course",
+        "price": 1999,
+        "image": "https://i.ytimg.com/vi/yQhPWGzQZYQ/hqdefault.jpg"
+    },
+    {
+        "id": "64f8d1a03b5c76000b1a8d95",
+        "name": "RegEx Pro Course",
+        "price": 999,
+        "image": "https://tagmango.com/publicassets/-regex-pro-course-cf34102b6bf8c3c268c030cb6db37e80.webp"
+    },
+    {
+        "id": "64fbd2c14e6f82001f2b5a7c",
+        "name": "Git and GitHub Fundamentals",
+        "price": 1499,
+        "image": "https://i.ytimg.com/vi/LdeNFQMI42o/hqdefault.jpg"
+    }
+]
