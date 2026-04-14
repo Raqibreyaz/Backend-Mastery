@@ -1,5 +1,7 @@
-import { useState } from "react";
-import CheckoutModal from "./CheckoutModal";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { SessionContext } from "./SessionContext";
+import api from "./api";
 
 export default function CourseCard({
   id,
@@ -8,7 +10,39 @@ export default function CourseCard({
   image,
   setToastMessage,
 }) {
-  const [open, setOpen] = useState(false);
+  const { session, fetchSession } = useContext(SessionContext);
+  const navigate = useNavigate();
+  const [adding, setAdding] = useState(false);
+
+  // Check if course is already in the cart or purchased
+  const inCart = session?.cart?.includes(id);
+  const purchased = session?.purchasedCourses?.includes(id);
+
+  const handleAction = async () => {
+    if (purchased) {
+      setToastMessage("You already own this course!");
+      setTimeout(() => setToastMessage(""), 3000);
+      return;
+    }
+
+    if (inCart) {
+      navigate('/cart');
+      return;
+    }
+
+    // Add to cart
+    setAdding(true);
+    try {
+      await api.post(`/cart/${id}`);
+      setToastMessage("Added to cart!");
+      await fetchSession(); // Refresh session to reflect cart changes
+    } catch (err) {
+      setToastMessage(err.response?.data?.error || "Failed to add to cart");
+    } finally {
+      setTimeout(() => setToastMessage(""), 3000);
+      setAdding(false);
+    }
+  };
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border-2 border-transparent hover:border-indigo-500 transition-colors">
@@ -22,26 +56,20 @@ export default function CourseCard({
             ₹{price}
           </span>
           <button
-            onClick={() => setOpen(true)}
-            className="flex cursor-pointer items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors"
+            onClick={handleAction}
+            disabled={adding}
+            className={`flex cursor-pointer items-center space-x-2 px-4 py-2 rounded-lg transition-colors text-white ${
+              purchased 
+                ? "bg-green-600 hover:bg-green-700"
+                : inCart ? "bg-gray-600 hover:bg-gray-700" : "bg-indigo-600 hover:bg-indigo-700"
+            } ${adding ? "opacity-75 cursor-not-allowed" : ""}`}
           >
-            <span>Buy Now</span>
+            <span>
+              {adding ? "Adding..." : purchased ? "Purchased" : inCart ? "Go to Cart" : "Add to Cart"}
+            </span>
           </button>
         </div>
       </div>
-
-      {/* Modal */}
-      {open && <CheckoutModal
-        open={open}
-        onClose={(message) => {
-          setToastMessage(message);
-          setTimeout(() => {
-            setToastMessage("");
-          }, 5000);
-          setOpen(false);
-        }}
-        course={{ id, name, price, image }}
-      />}
     </div>
   );
 }

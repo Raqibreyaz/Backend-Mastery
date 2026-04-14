@@ -1,0 +1,15 @@
+[
+  {
+    "cart": [],
+    "id": "47b88df4-1f16-4622-b364-8963ad8b0f41",
+    "ip": "::1",
+    "userEmail": "guest@guest.com",
+    "userMobile": "9876543211",
+    "userName": "Imran",
+    "purchasedCourses": [
+      "64f9ef2b7a3c450018a9d6b2",
+      "64fb2d7a9f4c11002e6d3c48",
+      "64fa1c9e3b7d92001c4a7f21"
+    ]
+  }
+]

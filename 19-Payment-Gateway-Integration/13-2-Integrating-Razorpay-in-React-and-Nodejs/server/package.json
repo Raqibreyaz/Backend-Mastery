@@ -4,13 +4,16 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch app.js"
+    "dev": "node --watch --env-file-if-exists=.env app.js",
+    "start": "node --env-file-if-exists=.env app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "nodemailer": "^8.0.5",
     "razorpay": "^2.9.6"
   }
 }
