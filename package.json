@@ -23,6 +23,7 @@
     "passport-google-oauth20": "^2.0.0",
     "razorpay": "^2.9.6",
     "redis": "^5.11.0",
+    "stripe": "^22.0.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
