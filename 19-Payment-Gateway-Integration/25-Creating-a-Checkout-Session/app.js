@@ -19,7 +19,7 @@ const result = await stripeClient.checkout.sessions.create({
     "https://raquibreyaz.netlify.app?session_id={CHECKOUT_SESSION_ID}",
   customer_email: "raquib@raquib.com",
   shipping_address_collection: {
-    allowed_countries: ["IN", "BD", "PK", "BG"],
+    allowed_countries: ["IN", "BD", "PK", "BG", ""],
   },
   billing_address_collection: "required",
   metadata: {
