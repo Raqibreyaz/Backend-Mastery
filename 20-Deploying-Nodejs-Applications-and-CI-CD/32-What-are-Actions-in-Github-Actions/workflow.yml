@@ -1,0 +1,37 @@
+name: my third workflow
+on: [push,workflow_dispatch]
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print working directory
+        run: pwd
+        
+      - name: List all files
+        run: ls -a
+
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+
+      - name: List all files
+        run: ls -a
+
+      - name: Print contents of workflow file
+        run: cat .github/workflows/my-workflow.yml
+
+  job-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Nodejs version
+        run: node -v
+      
+      - name: Print pnpm version
+        run: pnpm -v
+
+      - name: Install another version of node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 23
+
+      - name: Print Nodejs version
+        run: node -v
