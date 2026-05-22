@@ -1,0 +1,10 @@
+name: My First Workflow
+on: workflow_dispatch
+
+jobs: 
+    job-1:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo ${{github.token}}
+            - run: echo ${{secrets.GITHUB_TOKEN}}
+            - run: echo ${{secrets.GITHUB_TOKEN == github.token}}

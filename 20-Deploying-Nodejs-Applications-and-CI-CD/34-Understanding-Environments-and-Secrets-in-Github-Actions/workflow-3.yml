@@ -1,0 +1,17 @@
+name: my workflow 3
+on: push
+
+jobs:
+  my-prod-job:
+    environment: PROD
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{secrets.MY_AWS_SECRET}}
+      - run: echo ${{vars.APP_URL}}
+
+  my-test-job:
+    environment: TEST
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{secrets.MY_AWS_SECRET}}
+      - run: echo ${{vars.APP_URL}}

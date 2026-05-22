@@ -1,0 +1,14 @@
+name: my workflow 2
+on: workflow_dispatch
+
+jobs: 
+    job-1:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo ${{secrets.MY_AWS_SECRET}}
+            - run: echo ${{vars.MY_TEST_VAR}}
+    job-2:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{toJson(secrets)}}"
+            - run: echo "${{toJson(vars)}}"
