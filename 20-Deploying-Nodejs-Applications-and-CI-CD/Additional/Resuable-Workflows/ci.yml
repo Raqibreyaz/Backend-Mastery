@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  call-build:
+    uses: ./.github/workflows/reusable-build.yml
+    with:
+      node-version: "22"
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
