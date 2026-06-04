@@ -49,6 +49,35 @@ Example: if a user tries one card and it fails, the PaymentIntent can stay alive
 
 Example: one Checkout Session can lead to one PaymentIntent, and that PaymentIntent can produce multiple Charges if the customer first fails with Card A and then succeeds with Card B. [docs.stripe](https://docs.stripe.com/api/checkout/sessions)
 
+## Summary
+
+Session = checkout flow, Intent = payment lifecycle, Charge = payment attempt.
+
+Quick revision:
+
+- A new Checkout Session is created for a customer’s checkout attempt, and Stripe recommends creating a new Session each time the customer tries to pay.
+- A Checkout Session can have open, complete, or expired status values.
+- open means the checkout flow is still active, and expired means the Session is no longer usable.
+- Even if the Checkout Session is complete, you should still check payment_status to know whether money was actually collected.
+- Checkout Session payment_status can be paid, unpaid, or no_payment_required.
+- paid means payment was completed, unpaid means it was not completed yet, and no_payment_required means no immediate charge was needed.
+
+Payment flow:
+
+- A PaymentIntent tracks the lifecycle of collecting payment for an order or checkout flow.
+- PaymentIntent statuses include requires_payment_method, requires_action, requires_capture, canceled, and succeeded.
+- If a payment fails, the PaymentIntent can return to requires_payment_method so the customer can retry with another payment method.
+- A Charge is the actual payment attempt created within the payment flow.
+- One PaymentIntent can have multiple Charges if the customer makes multiple attempts with different cards or payment methods.
+
+So the relationship is: one Checkout Session can lead to one PaymentIntent, and one PaymentIntent can lead to multiple Charges.
+
+Easy example:
+
+- If a user opens a payment page, that maps to the Checkout Session.
+- When the user clicks pay, Stripe uses a PaymentIntent to manage the payment process.
+- If the user first fails with one card and then succeeds with another, those retries appear as multiple Charges under the same PaymentIntent.
+
 ## Mental model
 
 - **Checkout Session** = the customer’s checkout visit. [docs.stripe](https://docs.stripe.com/api/checkout/sessions)

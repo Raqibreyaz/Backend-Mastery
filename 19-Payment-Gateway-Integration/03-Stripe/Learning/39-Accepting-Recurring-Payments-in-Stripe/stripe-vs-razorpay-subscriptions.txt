@@ -1,0 +1,17 @@
+Quick Reference:
+
+Stripe subscriptions are created for a customer inside Stripe Billing, while Razorpay subscriptions are created by first defining a plan and then linking that plan to a customer subscription.
+
+Stripe supports trials and moves a subscription from trialing to active when billing starts, and Razorpay also supports trial periods plus upfront charges in its subscription setup.
+
+Stripe’s recurring flow is strongly tied to invoices and automatic charging of the saved payment method, while Razorpay emphasizes automated scheduled charges on the configured billing cycle.
+
+Stripe offers richer billing controls such as proration, dunning management, and subscription schedules with multiple phases, while Razorpay focuses more on simpler plan management, pause/cancel flows, retries, and alerts.
+
+Stripe is generally stronger for global SaaS and international recurring billing, while Razorpay is usually the better fit for India-first businesses and local payment behavior.
+
+Stripe subscription statuses commonly include trialing, active, and past_due, while Razorpay highlights states and events around active subscriptions, failing payments, and halted subscriptions after retries are exhausted.
+
+Both systems support webhook-based subscription updates, so backend systems should listen to provider events instead of trusting only the frontend.
+
+A simple mental model is: Stripe subscription = customer-centric billing engine with invoices and phases, while Razorpay subscription = plan-centric recurring billing with strong dashboard-driven automation.

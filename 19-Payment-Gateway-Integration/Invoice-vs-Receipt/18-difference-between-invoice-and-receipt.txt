@@ -1,0 +1,26 @@
+An invoice is sent before payment to ask the customer to pay, while a receipt is given after payment as proof that the money has been received.
+
+Meaning
+An invoice is a payment request for goods or services provided.
+
+A receipt is a payment confirmation issued after the transaction is completed.
+
+Timing
+An invoice is generated before the customer pays.
+
+A receipt is generated after the customer pays.
+
+Purpose
+The purpose of an invoice is to show the amount due and collect payment.
+
+The purpose of a receipt is to show that the payment has already been made.
+
+Contents
+An invoice usually contains item details, total amount, due date, and payment terms.
+
+A receipt usually contains amount paid, payment date, payment method, and item or service details.
+
+Example
+If a freelancer finishes a project and asks for payment, they send an invoice first.
+
+After the client pays, the freelancer sends a receipt as proof of payment.

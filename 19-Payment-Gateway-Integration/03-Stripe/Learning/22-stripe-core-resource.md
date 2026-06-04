@@ -44,6 +44,15 @@ Here are the **key core resources**:
    * **Balance** → Money held in your Stripe account (funds collected but not yet paid out).
    * **Payout** → Transfer of money from Stripe to your bank account.
 
+Note:
+- Stripe can create a Customer from the email entered during checkout.
+- Stripe does not treat email as a unique key for Customer objects.
+- So the same email can end up with multiple Customer records across multiple payments.
+- This is why you may see duplicate customers for repeated payments by the same email.
+- To avoid duplicates, your backend should:
+    - search for an existing customer by email,
+    - reuse that customer’s customer id,
+    - and pass that existing customer into checkout creation.
 ---
 
 ✅ **In short:**

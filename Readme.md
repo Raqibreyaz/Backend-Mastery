@@ -1,0 +1,6 @@
+- Each section has topics
+- each topic is prefixed with a number for learning order
+- each topic will always have 3 sub-dirs: learning,revision,interview
+- learning directory will have notes+code created while learning that topic
+- revision directory will have notes created while revising that topic
+- interview directory will have notes created while preparing for interview for that topic
