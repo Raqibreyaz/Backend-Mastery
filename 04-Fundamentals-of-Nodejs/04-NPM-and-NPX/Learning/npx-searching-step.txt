@@ -1,0 +1,24 @@
+What npx does?
+Search for a file and execute it
+
+Search Step-1:
+1. first searches package.json in current dir, if not found jumps to step-2
+2. checks for 'name' in package.json if matches with <package-name> in npx <package-name>
+3. searches for 'bin' key, the binary executable
+4. executes the binary executable, without nodejs
+
+Search Step-2:
+1. searches for node_modules/.bin/<package-name> binary file in current dir, if not found jumps to step-3
+2. executes that binary file
+
+Search Step-3:
+1. searches for <package-name> in global npm folder, if not found then jumps to step-4
+2. then executes it
+
+Search Step-4
+1. searches for <package-name> in npm-cache if found executes
+
+Search Step-5:
+1. searches for <package-name> in npm registry
+2. downloads it
+3. installs it in npm-cache/_npx folder

@@ -1,0 +1,7 @@
+{
+  "name": "hello",
+  "bin": "./app.js",
+  "dependencies": {
+    "vite": "^7.1.12"
+  }
+}

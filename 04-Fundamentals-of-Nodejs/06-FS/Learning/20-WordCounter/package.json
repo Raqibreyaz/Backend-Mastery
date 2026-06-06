@@ -1,0 +1,12 @@
+{
+  "name": "word-counter-raq",
+  "version": "0.1.4",
+  "description": "A simple Word Counter app",
+  "type": "module",
+  "main": "word-counter.js",
+  "bin": {
+    "word-counter-raq": "./word-counter.js"
+  },
+  "author": "Raquib Reyaz",
+  "license": "ISC"
+}
