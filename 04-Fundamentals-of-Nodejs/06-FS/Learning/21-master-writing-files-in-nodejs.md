@@ -2,7 +2,7 @@
 
 - **Lecture:** Master Writing Files in Node | fs.writeFile & fs.appendFile | Node.js Fundamentals Course | S4 Ep.21
 - **Date:** 2026-06-06
-- **Source:** [https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- **Source:** [Youtube](https://youtu.be/n1AEP8kog48?si=dbbje8lM7cV47YD4)
 - **Area:** Node.js / Backend Development
 - **Confidence after lecture (1–5):** 5
 - **One-sentence summary:** This lecture explores using the `fs` module in Node.js to write, append, and manage files using buffers and strings.

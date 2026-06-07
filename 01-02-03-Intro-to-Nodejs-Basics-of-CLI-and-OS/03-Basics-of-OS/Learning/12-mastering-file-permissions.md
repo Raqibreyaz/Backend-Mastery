@@ -2,7 +2,7 @@
 
 - Lecture: Mastering File Permissions in Windows & Linux | Node.js Fundamentals Course | S3 Ep.12
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/5doKEeIKOyI?si=6uaLu2CUfOpRj8B8)
 - Area: OS
 - Confidence after lecture (1–5): 5
 - One-sentence summary: An exploration of how operating systems manage file access security using permissions and how to manipulate them via GUI and terminal commands.
@@ -15,7 +15,8 @@
 
 ## 2. Mental model & intuition
 
-Think of a file like a room in a building. Permissions are the keys given to people: 
+Think of a file like a room in a building. Permissions are the keys given to people:
+
 - **Read (r)**: The ability to look into the room.
 - **Write (w)**: The ability to rearrange furniture (change content).
 - **Execute (x)**: The ability to open the door and enter/run the activity inside.
@@ -47,14 +48,16 @@ Permissions are assigned to three groups: the **Owner** (you), the **Group** (yo
 ## 6. Code / commands / API patterns
 
 bash
+
 # Change permissions symbolically
-chmod u+x filename    # Add execute for owner
-chmod g-w filename    # Remove write for group
+
+chmod u+x filename # Add execute for owner
+chmod g-w filename # Remove write for group
 
 # Change permissions using octal numbers
-chmod 755 filename    # rwxr-xr-x
-chmod 644 filename    # rw-r--r--
 
+chmod 755 filename # rwxr-xr-x
+chmod 644 filename # rw-r--r--
 
 - `chmod`: The command used to change mode bits.
 - `ls -l`: Displays long-form file details including current permissions.

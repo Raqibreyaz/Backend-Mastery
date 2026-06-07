@@ -2,7 +2,7 @@
 
 - Lecture: ES6 Modules in Node.js – The Modern Way to Import & Export! | S4 Ep.7
 - Date: 2026-06-06
-- Source: https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Video Link](https://youtu.be/GhXtWbygdyg?si=JIXPalrCWkgT5oLO)
 - Area: Language (JavaScript/Node.js)
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explains how to implement and use ES6 native module syntax (`import`/`export`) in Node.js by configuring `package.json`.

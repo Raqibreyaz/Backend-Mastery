@@ -2,7 +2,7 @@
 
 - Lecture: S4 Ep.16 - Library vs CLI Package & Local vs Global Package Explained
 - Date: 2026-06-06
-- Source: [Video Link](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&si=O1h2LVbJWOVTPgwd)
+- Source: [Video Link](https://youtu.be/yAsthl6UbL4?si=N6Z1B3tWasIdJWkF)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explores the distinction between library and CLI packages in Node.js, and how to manage them locally versus globally.

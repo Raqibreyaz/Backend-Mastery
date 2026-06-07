@@ -2,7 +2,7 @@
 
 - Lecture: Debugging Node.js Threads in VS Code? | Node.js Fundamentals Course | S3 Ep.6
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/rbn1ri6JPlI?si=t---RUSUivmFkosi)
 - Area: Tooling / Node.js
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explains how to configure VS Code to debug multi-threaded Node.js applications by attaching the debugger to worker threads.
@@ -45,14 +45,12 @@ Search in VS Code Command Palette (Ctrl+Shift+P / Cmd+Shift+P):
 text
 Debug: Toggle Auto Attach
 
-
 - Set this to **Always** or **Smart** to ensure the debugger catches worker threads.
 
 ### Running the Application
 
 bash
 node app.js
-
 
 - Run this in the terminal after enabling Auto Attach to trigger the debugging session.
 

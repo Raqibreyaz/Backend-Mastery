@@ -1,10 +1,8 @@
-Here is the summary of the video based on your requested template:
-
 # Topic: JavaScript Module Systems (CommonJS vs. ES6 Modules)
 
 - **Lecture:** Why Do We Need Different Module Systems? | Node.js Fundamentals Course | S4 Ep.9
 - **Date:** 2026-06-06
-- **Source:** [YouTube Link](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- **Source:** [YouTube Link](https://youtu.be/vLG9if65oiI?si=fujBziBnI5wYhXNc)
 - **Area:** Language / Framework (Node.js)
 - **Confidence after lecture:** 5/5
 - **One-sentence summary:** This lecture explains the historical evolution of JavaScript module systems, detailing why CommonJS was created for Node.js and its eventual transition to the standard ES6 module system.

@@ -2,7 +2,7 @@
 
 - Lecture: Understanding NPX: How It Works Behind the Scenes?
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/_DYtioZqLM0?si=Sb0ro5LJua1N2ecd)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: NPX is a tool that locates and executes local or remote binary packages, abstracting away the need for global installations.
@@ -20,6 +20,7 @@ Think of NPX as a "Universal Runner." Instead of installing a tool like a global
 ## 3. Internal working (mechanism)
 
 NPX follows a strict hierarchical search order to find an executable:
+
 1. **Local `package.json`:** Looks for a `bin` entry in the current working directory.
 2. **Local `node_modules`:** Checks `./node_modules/.bin/` for the requested package.
 3. **Global `npm` modules:** Checks the global installation path.
@@ -39,10 +40,13 @@ NPX follows a strict hierarchical search order to find an executable:
 ## 6. Code / commands / API patterns
 
 bash
+
 # Standard execution
+
 npx <package-name>
 
 # New syntax (NPM v16+)
+
 npm create <package-name>
 
 - `npx <package>`: Searches for and runs a binary.
@@ -57,7 +61,7 @@ npm create <package-name>
 ## 8. Trade-offs and alternatives
 
 - **Performance:** Slight overhead on the first run (fetching). Subsequent runs are fast due to caching.
-- **Alternatives:** 
+- **Alternatives:**
   - **Global NPM install:** Permanent, but leads to dependency hell and conflicts.
   - **`npm exec`:** The underlying command that NPX effectively points to in modern NPM versions.
 

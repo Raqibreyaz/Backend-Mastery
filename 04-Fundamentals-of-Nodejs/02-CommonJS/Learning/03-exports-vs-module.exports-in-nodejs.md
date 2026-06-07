@@ -2,7 +2,7 @@
 
 - Lecture: S4 Ep.3 | exports vs module.exports in Common.js
 - Date: 2026-06-06
-- Source: [Video Link](https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- Source: [Video Link](https://youtu.be/FBfNC-NOPMI?si=AHCIoCxEmcp96ABc)
 - Area: Language / Node.js
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explains the internal relationship between `exports` and `module.exports` and why incorrectly overwriting `exports` breaks modularity in Node.js.

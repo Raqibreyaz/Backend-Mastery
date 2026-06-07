@@ -2,7 +2,7 @@
 
 - Lecture: What is Shebang (#!) and Why It’s Important for Scripts? | Node.js Fundamentals Course | S4 Ep.15
 - Date: 2026-06-06
-- Source: [Video Link](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- Source: [Video Link](https://youtu.be/i-4pL53oFIQ?si=r1m0pHon0DY0jnPd)
 - Area: OS / Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: The shebang is a special directive used at the start of scripts to tell the operating system which interpreter to use to execute the file.

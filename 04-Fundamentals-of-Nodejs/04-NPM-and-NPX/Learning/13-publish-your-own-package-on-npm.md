@@ -2,7 +2,7 @@
 
 - Lecture: Publish Your Own NPM Package | Node.js Fundamentals Course | S4 Ep.13
 - Date: 2026-06-06
-- Source: [YouTube Link](https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&si=O1h2LVbJWOVTPgwd)
+- Source: [YouTube Link](https://youtu.be/GOh2hzBYaS8?si=sKWvWIWgU0wO4-JF)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explains how to create, configure, and publish a custom Node.js package to the NPM registry.

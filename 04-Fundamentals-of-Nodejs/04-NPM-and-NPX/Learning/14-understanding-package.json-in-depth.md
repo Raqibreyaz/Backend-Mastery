@@ -2,7 +2,7 @@
 
 - Lecture: S4 Ep.14 | Node.js Fundamentals Course
 - Date: 2026-06-06
-- Source: [https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- Source: [Youtube](https://youtu.be/NC0C-_m2QHQ?si=G1qv3cHt5tO0Jc0J)
 - Area: Tooling / Node.js
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explores the structure, configuration, and dependency management capabilities of the `package.json` file in a Node.js project.

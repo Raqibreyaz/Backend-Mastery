@@ -2,7 +2,7 @@
 
 - Lecture: What is NPX? How to Customize NPM Packages? | Node.js Fundamentals Course | S4 Ep.18
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/i5rULWAPgOY?si=gFfZmGqvUK_ulu9Q)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explores the internal workings of NPX and NPM by treating them as executable JavaScript files, demonstrating how they can be inspected, aliased, and customized.
@@ -37,15 +37,18 @@ Think of NPX and NPM not as mystical binaries, but as simple **JavaScript files*
 ## 6. Code / commands / API patterns
 
 bash
+
 # Find where the executable is located
+
 which npx
 
 # Run a package without global install
+
 npx vite
 
 # Create an alias in your shell config
-alias npx="/path/to/npx-cli.js"
 
+alias npx="/path/to/npx-cli.js"
 
 ## 7. Edge cases, gotchas, and failure modes
 

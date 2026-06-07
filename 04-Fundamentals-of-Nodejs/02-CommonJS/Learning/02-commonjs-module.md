@@ -2,7 +2,7 @@
 
 - **Lecture:** Understanding CommonJS in Node.js | S4 Ep.2
 - **Date:** 2026-06-06
-- **Source:** [ProCodrr Node.js Course](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- **Source:** [Youtube](https://youtu.be/S6y_4RhQNPY?si=V6pHYbzrwXx7prqu)
 - **Area:** Node.js / Backend Development
 - **Confidence after lecture (1–5):** 5
 - **One-sentence summary:** CommonJS is the default module system in Node.js that enables code organization and reusability through `require` and `module.exports`.

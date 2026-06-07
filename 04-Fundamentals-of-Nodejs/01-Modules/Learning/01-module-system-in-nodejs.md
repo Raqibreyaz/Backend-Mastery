@@ -2,7 +2,7 @@
 
 - Lecture: Node.js Module System Explained – CommonJS vs ESM
 - Date: 2026-06-06
-- Source: [Video Link](https://youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- Source: [Video Link](https://youtu.be/n5KFI8FUMjk?si=gszjEyDaaKI6Hltd)
 - Area: Framework / Language
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture introduces the two primary module systems in Node.js (CommonJS and ESM) and explores scoping differences between browsers and Node.js.

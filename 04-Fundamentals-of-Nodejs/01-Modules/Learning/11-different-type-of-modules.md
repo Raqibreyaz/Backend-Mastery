@@ -2,7 +2,7 @@
 
 - Lecture: Different Module Types - Node.js Module Types Explained | Node.js Fundamentals Course | S4 Ep.11
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&si=O1h2LVbJWOVTPgwd
+- Source: [Youtube](https://youtu.be/kkCu-ibmdRU?si=723Y3tVysV9UwVIt)
 - Area: Language (Node.js)
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture categorizes Node.js modules into three types: User-defined, Core (Native), and NPM modules, explaining their origins and how they are imported.
@@ -45,7 +45,6 @@ import fs from 'node:fs';
 
 // NPM Module
 import axios from 'axios';
-
 
 ## 7. Edge cases, gotchas, and failure modes
 

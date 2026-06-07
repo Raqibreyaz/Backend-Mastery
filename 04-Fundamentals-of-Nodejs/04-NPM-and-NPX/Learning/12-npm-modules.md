@@ -2,7 +2,7 @@
 
 - **Lecture:** NPM Modules in Node.js Explained | S4 Ep.12
 - **Date:** 2026-06-06
-- **Source:** [YouTube Playlist](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- **Source:** [YouTube](https://youtu.be/eKHimjFp47E?si=VK1pU5F2Xn5MFIXT)
 - **Area:** Framework / Tooling
 - **Confidence after lecture (1–5):** 5
 - **One-sentence summary:** This lecture explores the manual creation of local NPM modules, how Node.js resolves modules, and how to configure `package.json` for dual support of ESM and CommonJS.

@@ -2,7 +2,7 @@
 
 - Lecture: Can a Process Exist without a Thread? | Node.js Fundamentals Course | S3 Ep. 5
 - Date: 2026-06-06
-- Source: https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/rt2TGFKL4i8?si=WJDA2LGJ3213Kp8q)
 - Area: OS / Node.js
 - Confidence after lecture (1–5): 5
 - One-sentence summary: A process is a container for execution that must contain at least one thread, known as the 'main thread', to function.

@@ -2,7 +2,7 @@
 
 - Lecture: Node.js Fundamentals Course | S3 Ep.7
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/Thq58zJ8-4U?si=yHmhwHOmh9TL8ACD)
 - Area: OS / Backend Development
 - Confidence after lecture (1–5): 5
 - One-sentence summary: Environment variables are key-value pairs used by processes to store configuration, which can be managed at the System, User, or Process level.
@@ -42,18 +42,19 @@ Think of environment variables as a "context bag" that a parent process carries.
 ## 6. Code / commands / API patterns
 
 bash
+
 # Creating a variable in Bash (not an environment variable)
+
 NUM=58
 
 # Creating an environment variable (exported to child processes)
-export NUM=58
 
+export NUM=58
 
 javascript
 // Accessing in Node.js
 const envVars = process.env;
 console.log(envVars.NUM);
-
 
 ## 7. Edge cases, gotchas, and failure modes
 

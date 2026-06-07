@@ -2,7 +2,7 @@
 
 - Lecture: Working with Environment Variables in Terminal | Node.js Fundamentals Course | S3 Ep.8
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/A6vZ00B3x2U?si=RMXKccOj5o8iS93W)
 - Area: OS / Language / Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture covers how to manage, manipulate, and access environment variables in various terminal environments and their role in Node.js applications.
@@ -45,18 +45,22 @@ Think of environment variables as a global "settings bag" that follows a process
 ## 6. Code / commands / API patterns
 
 bash
+
 # List all env variables
+
 env
 
 # Export a variable for the current session
+
 export MY_VAR=hello
 
 # Set a permanent variable in Windows
+
 setx MY_VAR "value"
 
 # Unset a variable in terminal
-unset MY_VAR
 
+unset MY_VAR
 
 javascript
 // Loading .env files manually
@@ -64,10 +68,9 @@ const fs = require('fs');
 const data = fs.readFileSync('.env', 'utf-8');
 const variables = data.split('\n');
 variables.forEach(line => {
-  const [key, value] = line.split('=');
-  process.env[key] = value;
+const [key, value] = line.split('=');
+process.env[key] = value;
 });
-
 
 ## 7. Edge cases, gotchas, and failure modes
 

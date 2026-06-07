@@ -2,7 +2,7 @@
 
 - Lecture: What is an Operating System? | Node.js Fundamentals Course
 - Date: 2026-06-06
-- Source: https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://www.youtube.com/watch?v=DZbIwqW3zr0&list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&index=21)
 - Area: OS
 - Confidence after lecture (1–5): 5
 - One-sentence summary: An operating system is specialized software that manages hardware resources and facilitates multitasking through efficient process management.

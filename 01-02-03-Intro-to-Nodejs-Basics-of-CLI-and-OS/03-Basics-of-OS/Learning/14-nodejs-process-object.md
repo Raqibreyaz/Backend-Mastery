@@ -2,7 +2,7 @@
 
 - Lecture: Node.js process Object: Methods & Properties | S3 Ep.14
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/ikocnqQcdXU?si=WpDKEdB8pT5Q7-mW)
 - Area: Language (Node.js)
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explores the core properties and methods of the Node.js `process` object used to interact with the current operating system process.
@@ -48,14 +48,13 @@ console.log(process.argv);
 
 // Getting and changing the directory
 console.log(process.cwd());
-process.chdir('./temp'); 
+process.chdir('./temp');
 
 // Exiting the process
 process.exit(0); // Graceful exit
 
 // Emitting a custom warning
 process.emitWarning('This is a custom warning message');
-
 
 ## 7. Edge cases, gotchas, and failure modes
 

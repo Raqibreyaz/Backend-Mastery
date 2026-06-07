@@ -2,7 +2,7 @@
 
 - Lecture: What is a Prompt in the Terminal? | Node.js Fundamentals Course | S2 Ep.7
 - Date: 2026-06-06
-- Source: https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [YouTube Video](https://www.youtube.com/watch?v=BACidSE8bwg&list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&index=17)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explains how terminal prompts work and how to customize the PS1 and PS2 environment variables in a Bash shell.

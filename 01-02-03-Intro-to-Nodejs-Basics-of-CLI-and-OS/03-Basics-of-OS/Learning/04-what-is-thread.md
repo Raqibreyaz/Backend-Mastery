@@ -2,7 +2,7 @@
 
 - Lecture: What is Thread? | Is Node.js Single Threaded or Multi-Threaded? | Node.js Course | S3 Ep.4
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/1kCgiLuyF4c?si=N2-BYPZyRnGyZJfW)
 - Area: OS / Language
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explains the concept of threads, the difference between concurrency and parallelism, and clarifies that Node.js supports multi-threading through the Worker Threads module.
@@ -46,7 +46,6 @@ const { Worker } = require('worker_threads');
 new Worker('./a.js');
 new Worker('./b.js');
 new Worker('./c.js');
-
 
 - Explanation: This code imports the `Worker` class from the `worker_threads` module. Each `new Worker()` call spawns a separate thread to execute the specified file, allowing the operations to run in parallel.
 

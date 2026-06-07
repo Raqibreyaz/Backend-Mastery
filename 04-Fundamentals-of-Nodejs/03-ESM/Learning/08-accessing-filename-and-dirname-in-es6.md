@@ -2,7 +2,7 @@
 
 - Lecture: Accessing filename and dirname in ES6 Modules | S4 Ep.8
 - Date: 2026-06-06
-- Source: [Video Link](https://youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- Source: [Video Link](https://youtu.be/RWiXLtGnw54?si=M0_xdo3x6-7JPSBr)
 - Area: Node.js / Language
 - Confidence after lecture (1–5): 5
 - One-sentence summary: Learn how to access file and directory paths in ES6 modules using `import.meta.url` since `__filename` and `__dirname` are not globally available.

@@ -2,7 +2,7 @@
 
 - **Lecture:** S4 Ep.20: Build a Word Counter CLI App in Node.js
 - **Date:** 2026-06-06
-- **Source:** [YouTube Playlist](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- **Source:** [YouTube](https://youtu.be/ScFK3tphRVY?si=1pTjf83k5cluqtBQ)
 - **Area:** Node.js / Tooling
 - **Confidence after lecture (1–5):** 5
 - **One-sentence summary:** This lecture teaches how to build a CLI application in Node.js that reads local files, tokenizes text using Regex, and counts word occurrences dynamically.

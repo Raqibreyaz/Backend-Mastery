@@ -2,7 +2,7 @@
 
 - Lecture: Introduction to Terminal and Shell | Node.js Fundamentals Course | S2 Ep.1
 - Date: 2026-06-06
-- Source: [YouTube Playlist](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&si=O1h2LVbJWOVTPgwd)
+- Source: [YouTube Video](https://www.youtube.com/watch?v=k5UHzcKs-C4&list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&index=11)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture covers the essential concepts of terminals and shells for backend developers, including installing Git Bash on Windows and configuring it within VS Code.

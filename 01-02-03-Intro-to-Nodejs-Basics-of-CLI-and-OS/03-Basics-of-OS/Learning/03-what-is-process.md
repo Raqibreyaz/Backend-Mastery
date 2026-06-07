@@ -2,7 +2,7 @@
 
 - Lecture: What is Process? | Node.js Fundamentals Course | S3 Ep.3
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/xcUoEIUMcn4?si=piFnHczxbl3cfvNv)
 - Area: OS
 - Confidence after lecture (1–5): 5
 - One-sentence summary: A process is a program in execution that consumes system resources like CPU time and RAM, managed by the operating system.
@@ -42,13 +42,15 @@ Think of a process as a physical "app" or "program." If you are at home and deci
 ## 6. Code / commands / API patterns
 
 shell
+
 # Launching a process from terminal
+
 node app.js
 
 # Listing processes (OS specific)
+
 taskmgr # Windows
 activity monitor # macOS
-
 
 - `process` object in Node.js: A global object that provides information about the current Node.js process (e.g., `process.pid`, `process.ppid`).
 

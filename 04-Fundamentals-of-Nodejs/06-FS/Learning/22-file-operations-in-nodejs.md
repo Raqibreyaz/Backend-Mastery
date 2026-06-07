@@ -2,7 +2,7 @@
 
 - Lecture: File Operations in Node.js: Rename, Delete, Copy & More! | Node.js Fundamentals Course | S4 Ep.22
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/ntxnUiVodq4?si=HWGm41CLYInXdaFG)
 - Area: Language (Node.js)
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture covers programmatic file system manipulations in Node.js including renaming, copying, moving, deleting, and watching files/directories using the `fs` module's Promise API.
@@ -53,9 +53,8 @@ await fs.rm('folderName', { recursive: true });
 
 // Watching a file for changes
 fs.watch('file.txt', (eventType, filename) => {
-  console.log(eventType); // 'change' or 'rename'
+console.log(eventType); // 'change' or 'rename'
 });
-
 
 ## 7. Edge cases, gotchas, and failure modes
 

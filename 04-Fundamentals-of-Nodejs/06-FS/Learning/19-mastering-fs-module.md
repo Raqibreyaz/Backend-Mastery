@@ -2,7 +2,7 @@
 
 - Lecture: Mastering Node.js FS Module: Read Files Like a Pro | Node.js Fundamentals Course | S4 Ep.19
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/491GRfbtdYY?si=c1mkzzIuGUAWuvt8)
 - Area: Framework / Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explores the Node.js FS module, demonstrating how to perform file read operations using synchronous, callback-based, and promise-based approaches, highlighting the importance of non-blocking I/O for performance.
@@ -15,7 +15,8 @@
 
 ## 2. Mental model & intuition
 
-Think of the FS module as the bridge between your JavaScript code and the physical hard drive. Just like ordering food at a restaurant: 
+Think of the FS module as the bridge between your JavaScript code and the physical hard drive. Just like ordering food at a restaurant:
+
 - **Synchronous** is like standing at the counter and waiting until the food is ready before doing anything else (blocking).
 - **Asynchronous (Promises/Callbacks)** is like getting a buzzer—you place your order and go do other things; the system notifies you when your food (data) is ready (non-blocking).
 
@@ -42,18 +43,18 @@ Think of the FS module as the bridge between your JavaScript code and the physic
 ## 6. Code / commands / API patterns
 
 ### Synchronous (Avoid in production)
+
 javascript
 import fs from 'fs';
 const content = fs.readFileSync('index.html', 'utf-8');
 console.log(content);
 
-
 ### Asynchronous (Promises - Recommended)
+
 javascript
 import fs from 'fs/promises';
 const data = await fs.readFile('index.html', 'utf-8');
 console.log(data);
-
 
 ## 7. Edge cases, gotchas, and failure modes
 

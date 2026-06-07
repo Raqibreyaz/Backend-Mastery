@@ -2,7 +2,7 @@
 
 - Lecture: Create Aliases for Frequent Commands | Node.js Fundamentals Course | S2 Ep.9
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://www.youtube.com/watch?v=Jy5HzT-qRUw&list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&index=19)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: Learn how to create custom shortcuts (aliases) in the terminal to execute long or frequently used commands efficiently.

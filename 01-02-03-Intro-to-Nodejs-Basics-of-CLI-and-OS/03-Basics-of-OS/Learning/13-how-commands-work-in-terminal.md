@@ -2,7 +2,7 @@
 
 - Lecture: S3 Ep.13 - How Commands Work in Terminal | Node.js Fundamentals Course
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/LZdR8sVz0ak?si=6IKI4T-D9pdYUiMJ)
 - Area: OS / Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explains the internal hierarchy and mechanism—aliases, functions, built-ins, hash tables, and PATH execution—that the terminal uses to resolve and run commands.
@@ -20,6 +20,7 @@ Think of the terminal as a librarian looking for a book on a shelf. The libraria
 ## 3. Internal working (mechanism)
 
 When you type a command and hit enter, the shell checks in this specific order:
+
 1. **Aliases**: Are there any shortcuts defined?
 2. **Functions**: Is there a shell function with this name?
 3. **Built-ins**: Is it a command native to the shell itself (e.g., `cd`)?
@@ -42,21 +43,26 @@ When you type a command and hit enter, the shell checks in this specific order:
 ## 6. Code / commands / API patterns
 
 shell
+
 # Checking what a command is
+
 type <command_name>
 
 # Checking the PATH variable
+
 echo $PATH
 
 # Cleaning the PATH output for readability
+
 echo $PATH | tr ':' '\n'
 
 # Adding a path to PATH (Current session)
+
 PATH=$PATH:/new/directory/path
 
 # Viewing Hash table
-hash
 
+hash
 
 - `type`: Tells you the nature of the command (alias, function, built-in, or file).
 - `tr ':' '\n'`: Replaces colons in the PATH variable with newlines for a clean, vertical list.

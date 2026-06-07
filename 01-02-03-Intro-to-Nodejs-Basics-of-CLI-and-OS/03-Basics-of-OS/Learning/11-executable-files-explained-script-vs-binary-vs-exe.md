@@ -2,7 +2,7 @@
 
 - Lecture: Executable Files Explained: Script vs Binary, and EXE | Node.js Fundamentals Course | S3 Ep.11
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/qVfj6jqYZRU?si=-Id7OqNQbOqVA6ab)
 - Area: OS / Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: An exploration of how operating systems execute files, differentiating between text-based scripts and compiled binary executables.
@@ -15,7 +15,8 @@
 
 ## 2. Mental model & intuition
 
-Think of a terminal as a waiter. When you type a command, the waiter looks for an item on the menu (the PATH). 
+Think of a terminal as a waiter. When you type a command, the waiter looks for an item on the menu (the PATH).
+
 - A **Script** is like a handwritten recipe (text file) that the waiter reads line-by-line to perform tasks.
 - A **Binary** is like a pre-cooked meal (machine code); the waiter doesn't need to read a recipe, they just serve it, and it runs immediately.
 
@@ -44,19 +45,23 @@ Think of a terminal as a waiter. When you type a command, the waiter looks for a
 ## 6. Code / commands / API patterns
 
 bash
+
 # Check permissions
+
 ls -l
 
 # Make a file executable (Unix)
+
 chmod +x style.css
 
 # Run a file
+
 ./filename
 
 # Build a Node.js binary
+
 npm install pkg
 npm run build
-
 
 - `chmod +x`: Grants execute permission.
 - `pkg`: A tool to bundle Node.js code into a standalone binary.

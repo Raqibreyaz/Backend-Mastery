@@ -2,7 +2,7 @@
 
 - Lecture: Node.js Fundamentals - S2 Ep.5
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://www.youtube.com/watch?v=2MzYViC2yqk&list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&index=15&pp=iAQB)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: A practical guide to managing files and directories efficiently using terminal commands.

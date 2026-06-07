@@ -2,7 +2,7 @@
 
 - Lecture: Build Your Own require() Function in Node.js from Scratch! 🚀 | Custom Module System | S4 Ep.6
 - Date: 2026-06-06
-- Source: [Video Link](https://youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- Source: [Video Link](https://youtu.be/4rdGtseITWg?si=W527AnHeFdCn0Djg)
 - Area: Language (Node.js)
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture demonstrates how to implement a custom module loader in Node.js by reading file contents and executing them within a wrapped scope using `eval` or the `vm` module.

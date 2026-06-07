@@ -2,7 +2,7 @@
 
 - Lecture: What is the Module Wrapper Function in Node.js? | Node.js Fundamentals Course | S4 Ep.5
 - Date: 2026-06-06
-- Source: [YouTube Link](https://youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- Source: [YouTube Link](https://youtu.be/6RuTx9q4ft4?si=yVjrCCBTE6TkZVvq)
 - Area: Language / Tooling (Node.js)
 - Confidence after lecture (1–5): 5
 - One-sentence summary: The Node.js module wrapper function is an IIFE that encapsulates module code to provide local scope and specific execution variables like `require`, `module`, and `exports`.

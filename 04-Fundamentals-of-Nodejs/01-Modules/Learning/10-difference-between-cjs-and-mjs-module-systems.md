@@ -2,7 +2,7 @@
 
 - **Lecture:** S4 Ep.10 - Difference Between CJS and MJS Module Systems
 - **Date:** 2026-06-06
-- **Source:** [https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr](https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- **Source:** [Youtube](https://youtu.be/KAtoJTcf0MI?si=RAqcknSKUbK9JUay)
 - **Area:** Language (Node.js/JavaScript)
 - **Confidence after lecture (1–5):** 5
 - **One-sentence summary:** This lecture compares the legacy synchronous CommonJS (CJS) module system with the modern asynchronous ES6 (MJS) module system in Node.js.

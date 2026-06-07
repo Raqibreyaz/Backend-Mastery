@@ -2,7 +2,7 @@
 
 - Lecture: S4 Ep.4 - Understanding the Module Object in Node.js
 - Date: 2026-06-06
-- Source: [Video Link](https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- Source: [Video Link](https://youtu.be/YnG1--kye8k?si=iQ0HkmSZ8iXc5d-a)
 - Area: Language / Node.js
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explores the structure, properties, and internal mechanics of the Node.js `module` object and how Node.js manages file-based modularity.

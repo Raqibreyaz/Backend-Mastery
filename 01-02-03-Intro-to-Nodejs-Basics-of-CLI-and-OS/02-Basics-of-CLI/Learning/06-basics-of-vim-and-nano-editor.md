@@ -2,7 +2,7 @@
 
 - Lecture: Basics of Vim and Nano Editor | Node.js Fundamentals Course
 - Date: 2026-06-06
-- Source: [YouTube Video](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- Source: [YouTube Video](https://www.youtube.com/watch?v=hc6pRDGJX_4&list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&index=16)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: An introduction to reading, modifying, and saving files directly from the terminal using `cat`, `nano`, and `vim`.

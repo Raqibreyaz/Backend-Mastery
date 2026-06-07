@@ -2,7 +2,7 @@
 
 - Lecture: Understanding .bashrc File | Node.js Fundamentals Course | S2 Ep.8
 - Date: 2026-06-06
-- Source: https://www.youtube.com/watch?v=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [YouTube Video](https://www.youtube.com/watch?v=a3CDkK7oWeE&list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&index=18)
 - Area: Tooling
 - Confidence after lecture (1–5): 5
 - One-sentence summary: This lecture explains how to permanently customize your terminal prompt and environment using the .bashrc configuration file.

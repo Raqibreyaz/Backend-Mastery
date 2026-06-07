@@ -2,7 +2,7 @@
 
 - Lecture: Understanding Files, Folders, and the Path System in OS | Node.js Fundamentals Course | S3 Ep.10
 - Date: 2026-06-06
-- Source: https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr
+- Source: [Youtube](https://youtu.be/KO_YcmPFOvk?si=GYpV5OsevU3H1XzH)
 - Area: OS
 - Confidence after lecture (1–5): 5
 - One-sentence summary: An exploration of file systems, directory structures, symbolic links, and absolute vs. relative path conventions across Windows and Unix-like environments.
@@ -41,16 +41,19 @@ Think of the file system as a giant tree. The "Root" is the base of the tree. Ev
 ## 6. Code / commands / API patterns
 
 bash
+
 # Show file/directory info (d=directory, l=symlink, -=file)
+
 ls -l
 
 # Get current working directory
+
 pwd
 
 # Convert paths between Windows and Unix formats (via cygpath)
+
 cygpath -w /path/to/file
 cygpath -u C:\path\to\file
-
 
 ## 7. Edge cases, gotchas, and failure modes
 

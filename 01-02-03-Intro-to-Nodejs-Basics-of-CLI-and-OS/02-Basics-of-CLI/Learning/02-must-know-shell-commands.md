@@ -2,7 +2,7 @@
 
 - **Lecture:** Must-Know Shell Commands for Every Developer | Node.js Fundamentals Course | S2 Ep.2
 - **Date:** 2026-06-06
-- **Source:** [YouTube](https://youtube.com/playlist?list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr)
+- **Source:** [YouTube](https://www.youtube.com/watch?v=8xrZ4HOEL_8&list=PLfEr2kn3s-bqrqEzlQXbrFwisqlYspmRr&index=12)
 - **Area:** Tooling
 - **Confidence after lecture (1–5):** 5
 - **One-sentence summary:** An introduction to fundamental terminal commands (`echo`, `pwd`, `whoami`) and the basics of shell scripting to automate developer tasks.
