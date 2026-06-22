@@ -1,0 +1,14 @@
+{
+    "name": "02-intro-to-aws-lambda-functions",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {},
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "mongodb": "^7.3.0"
+    }
+}
