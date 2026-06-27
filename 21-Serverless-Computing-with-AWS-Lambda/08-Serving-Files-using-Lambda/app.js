@@ -13,7 +13,6 @@ export const streamFile = awslambda.streamifyResponse(
     const relativePath = normalizedPath.replace(/^[/\\]+/, "");
 
     const filePath = path.join(ASSET_ROOT, path.join("/", relativePath));
-    console.log(filePath);
 
     if (!fs.existsSync(filePath)) {
       const metadata = {
@@ -82,12 +81,20 @@ export const streamFile = awslambda.streamifyResponse(
 );
 
 export const sendFile = (event) => {
+  const rawPath = decodeURIComponent(event.rawPath || "/");
+  const normalizedPath = path.normalize(rawPath).replace(/^(\.\.[/\\])+/, "");
+  const relativePath = normalizedPath.replace(/^[/\\]+/, "");
+
   const filePath = decodeURIComponent(
-    path.join("assets", path.join("/", event.rawPath)),
+    path.join(ASSET_ROOT, path.join("/", relativePath)),
   );
 
   if (!fs.existsSync(filePath))
-    return { statusCode: 404, body: "file not found!" };
+    return {
+      statusCode: 404,
+      headers: { "Content-Type": "text/plain" },
+      body: "file not found!",
+    };
 
   const isDirectory = fs.statSync(filePath).isDirectory();
 
@@ -106,7 +113,7 @@ export const sendFile = (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Content-Type": "text/html",
+        "Content-Type": "text/html; charset=utf-8",
       },
       body,
     };
@@ -119,8 +126,8 @@ export const sendFile = (event) => {
   return {
     statusCode: 200,
     headers: {
-      "content-type": mimeType,
-      "content-disposition": `inline; filename="${filename}"`,
+      "Content-Type": mimeType,
+      "Content-Disposition": `inline; filename="${filename}"`,
     },
     body: data,
     isBase64Encoded: true,
