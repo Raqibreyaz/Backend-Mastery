@@ -1,0 +1,6 @@
+1. separating heavy resource consuming routes in different lambda
+2. giving rest of the code less resources to reduce cost
+
+for example:
+1. login/register route consumes more cpu as it requires bcrypt for password hashing and comparison so a separate high resourced lambda will be required here
+2. other routes like just returning the presigned url of a file requires much less resources
