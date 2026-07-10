@@ -150,6 +150,8 @@ So you cannot say “authoritative DNS is always on the second‑level domain,�
 
 ## 5. Full Recursive Resolution Flow (Step-by-Step Example)
 
+![](.)
+
 Let’s walk a full resolution for `storra.servehttp.com` with no cache in the resolver.
 
 ### Actors
