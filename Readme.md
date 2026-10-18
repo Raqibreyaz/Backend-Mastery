@@ -89,8 +89,9 @@ Topics within each section are numbered to reflect the recommended learning orde
 ### Section 09 · Computer Networking
 > The theory behind how data moves across the internet.
 
-- **01 · IP Addresses & Ports** — IPv4/IPv6, subnetting, port ranges, and socket addresses
-- *More networking topics* — DNS, TCP/IP stack layers, HTTP protocol internals
+- **01 · Networking Fundamentals & History** — Why learn networking, what is computer networking, packet switching, story of the Internet & WWW, networking hardware, and network topologies (LAN, WAN)
+- **02 · IP Addresses & Addressing Architecture** — How internet reaches home/mobile, IPv4 in-depth (structure, classes, CIDR subnetting), dynamic vs. static IPs, public vs. private IPs (NAT benefits & drawbacks), and IPv6 in-depth
+- **03 · DNS Architecture & Security** — Domain Name System hierarchy, root/TLD/authoritative nameservers, iterative vs. recursive resolution, and DNS hijacking/poisoning vectors
 
 ---
 
@@ -138,7 +139,10 @@ Topics within each section are numbered to reflect the recommended learning orde
 - **11 · App Architecture** — Structuring a Node.js application around MongoDB
 - **12 · Operators & Commands** — Query operators (`$gt`, `$in`, `$regex`), aggregation pipeline
 - **13 · Schema Validation** — Enforcing structure with JSON Schema in MongoDB
-- **14 · Errors & Transactions** — Multi-document ACID transactions and error handling
+- **14 · Errors, Transactions & Concurrency** — Production database resilience:
+  - **Database Error Handling** (`48-database-errors.md`) — Classifying and safely recovering from operational vs. programmer DB errors
+  - **Transactions (All or Nothing)** (`Transactions-All-or-Nothing/`) — 10-chapter module on ACID properties, transaction lifecycles, isolation levels (Read Committed to Serializable), lock contention, deadlock prevention, safe application rollbacks (`try/catch/finally`), `runAll` simulation exercise, and MongoDB replica set transactions (`session.withTransaction`)
+  - **Concurrency (The Bug That Needs Two Users)** (`Concurrency-The-Bug-That-Needs-2-Users/`) — 10-chapter module on race conditions, lost updates (read-modify-write), check-then-act hazards, atomic conditional updates, optimistic locking (`version` field), pessimistic locking (`SELECT FOR UPDATE`), concurrency solution comparison matrix, stress-testing concurrent requests, and `saveWithVersion` exercise
 - **15 · Data Modeling** — Embedding vs. referencing, patterns for common use cases
 - **16 · Backup & Restore** — `mongodump`, `mongorestore`, and Atlas backups
 - **17 · Authentication in MongoDB** — Users, roles, and authentication mechanisms
@@ -236,6 +240,7 @@ Topics within each section are numbered to reflect the recommended learning orde
 - **08 · Storage Classes & Pricing** — Standard, Intelligent-Tiering, Glacier, and cost optimization
 - **09 · CloudFront & CDN** — Distributing S3 content globally via CloudFront
 - **10 · CORS in S3** — Configuring bucket CORS for browser-based uploads
+- **11 · Multipart Uploads** — Large file uploads via S3 Multipart API, chunked uploads, part verification, abort lifecycles, and CloudFront signed cookies
 
 ---
 
@@ -268,6 +273,37 @@ Topics within each section are numbered to reflect the recommended learning orde
 
 ---
 
+### Section 21 · Serverless Computing with AWS Lambda
+> Event-driven, auto-scaling compute without managing server infrastructure.
+
+- **01 · Serverless & Lambda Fundamentals** — Serverless mental model, event sources, request lifecycle into Lambda, execution context, and pricing/cost optimization models
+- **02 · Core Lambda Usage & Observability** — Execution lifecycle (cold starts vs. warm starts, container reuse), memory & timeout sizing, and deployment automation via Serverless Framework
+- **03 · Building Real APIs with Lambda** — Database connection pooling across invocations (MongoDB), static file & media serving, and porting Express.js applications to AWS Lambda
+- **04 · API Gateway Mastery** — HTTP APIs vs. REST APIs, payload proxy formats, route mapping, default routes, route priority resolution, and custom domain configuration
+
+---
+
+### Section 22 · Observability Fundamentals for Production Systems
+> Moving from guessing what broken services are doing to knowing with precision.
+
+- **01 · The Three Pillars of Observability** — Structured logging (JSON formats, correlation IDs), aggregated metrics (counters, gauges, histograms, p50/p95/p99 latency), and distributed tracing (spans, traceparent propagation across microservices)
+- **02 · Health Checks & Traffic Routing** — Liveness probes (process restart decisions) vs. Readiness probes (traffic admission decisions)
+- **03 · Production Alerting & Service Levels** — Symptom-based alerting vs. noise, SLIs (service level indicators), SLOs (service level objectives), and error budget management
+
+---
+
+### Section 23 · Background Jobs and Queues
+> Decoupling heavy asynchronous processing from the critical HTTP request path.
+
+- **01 · Accept-Enqueue-Answer Pattern** — Fast HTTP response contracts (202 Accepted) and asynchronous delegation
+- **02 · The Dual-Write Hazard & Outbox Pattern** — Ensuring transactional consistency between database updates and message publishing
+- **03 · At-Least-Once Delivery & Idempotency** — Handling duplicate job execution safely with idempotency keys
+- **04 · Retries, Backoff & Dead Letter Queues (DLQ)** — Exponential backoff with jitter, separating transient errors from poison pills
+- **05 · Ordering & Concurrency Controls** — FIFO queues, message grouping/partitioning, and worker scaling limits
+- **06 · Job Architecture & Payload Design** — Fat vs. thin payloads, passing IDs vs. state snapshots, and practical `runJob` implementation
+
+---
+
 ## 🏗️ Repository Structure
 
 ```
@@ -281,7 +317,10 @@ Backend-Mastery/
 ├── 04-Fundamentals-of-Nodejs/
 ├── 05-Data-Representation/
 ├── ...
-└── 20-Deploying-Nodejs-Applications-and-CI-CD/
+├── 20-Deploying-Nodejs-Applications-and-CI-CD/
+├── 21-Serverless-Computing-with-AWS-Lambda/
+├── 22-Observability-Fundamentals-for-Production-Systems/
+└── 23-Background-Jobs-and-Queues/
 ```
 
 Each topic directory follows this three-phase layout:
@@ -301,13 +340,15 @@ Each topic directory follows this three-phase layout:
 |---|---|
 | **Runtime** | Node.js |
 | **Frameworks** | Express.js |
-| **Databases** | MongoDB, Redis |
+| **Serverless & Cloud** | AWS Lambda, AWS API Gateway, Serverless Framework, AWS S3, AWS CloudFront, IAM |
+| **Databases** | MongoDB (Replica Sets, Transactions), Redis |
 | **ODM** | Mongoose |
 | **Auth** | JWT, Sessions, OAuth 2.0 (Google, GitHub), Passport.js |
-| **Cloud** | AWS S3, AWS CloudFront, IAM |
+| **Observability** | Structured Logging, Metrics (p50/p95/p99), Distributed Tracing, Liveness & Readiness Probes |
+| **Asynchronous & Queues**| Background Workers, Transactional Outbox Pattern, Dead Letter Queues (DLQ), Idempotency |
 | **Payments** | Razorpay, Stripe |
 | **DevOps** | PM2, Nginx, GitHub Actions, Docker (basics) |
-| **DNS/CDN** | Cloudflare, AWS CloudFront |
+| **Networking & Protocols** | HTTP/1.1, HTTP/2, HTTP/3, TCP, UDP, DNS, IPv4/IPv6, Cloudflare |
 | **Tools** | Wireshark, AWS CLI, Ngrok, Node Cron |
 
 ---
@@ -328,9 +369,13 @@ By the end of this course you will be able to:
 - [ ] Build production-grade RESTful APIs with Express and MongoDB
 - [ ] Implement secure authentication flows (JWT, OAuth 2.0, Sessions)
 - [ ] Design and enforce role-based access control systems
+- [ ] Prevent race conditions and data corruption with transactions (ACID, isolation levels) and locking patterns (optimistic & pessimistic)
 - [ ] Use Redis for caching, pub/sub, and session management
 - [ ] Harden applications against OWASP Top 10 vulnerabilities
 - [ ] Store and serve files at scale using AWS S3 and CloudFront
+- [ ] Build and deploy serverless APIs using AWS Lambda and API Gateway
+- [ ] Instrument services with production observability (structured logs, metrics, distributed traces, and health checks)
+- [ ] Design reliable asynchronous background job pipelines with the Outbox pattern, idempotency keys, and DLQs
 - [ ] Integrate payment gateways (Razorpay & Stripe) with webhook verification
 - [ ] Deploy Node.js apps with PM2 + Nginx + SSL on a Linux server
 - [ ] Automate deployments using GitHub Actions CI/CD pipelines
