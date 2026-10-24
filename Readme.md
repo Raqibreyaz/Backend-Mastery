@@ -391,7 +391,7 @@ If you want to use this structure to track your own progress:
 1. **Fork the repo** by clicking the **Fork** button at the top right of this GitHub page.
 2. **Clone your fork** to your local machine:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Backend-Mastery.git
+   git clone  https://github.com/Raqibreyaz/Backend-Mastery
    ```
 3. **Customize and learn**: Use the `Learning/`, `Revision/`, and `Interview/` directories under each topic to store your own notes, snippets, and solutions.
 
